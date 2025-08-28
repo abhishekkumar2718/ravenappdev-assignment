@@ -2,7 +2,7 @@
 
 ## Input
 
-* `layout.json` — layout metadata (pages, blocks, coordinates).
+* `mmd_lines_data.json` — layout metadata (pages, blocks, coordinates).
 * `manual.mmd` — Markdown manual (tables preserved, images referenced).
 
 ---
