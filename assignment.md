@@ -34,8 +34,8 @@ Handle ambiguity (multiple matches) by returning top candidates; respond with `"
 
 ## Deliverables
 
-* API implementation (`/locate`, `/extract`).
-* **DESIGN.md** (≤1 page) describing your ranking logic, tie/refusal policy, and modular design choices.
+* API implementation.
+* **DESIGN.md** (≤1 page).
 * Sample outputs for 3–4 queries.
 
 
