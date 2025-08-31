@@ -8,6 +8,19 @@ I am working on this project as a take-home assignment. This means you should pr
 
 The deadline is 24 hours, and I would be able to give 4-6 hours to the assignment at most. Prioritize solutions that fit within this time frame.
 
+## Problem
+
+You are given a manual on control valves and are building a chatbot to answer queries that technicians might have.
+
+Key files:
+- `manual.mmd`: contains the transcription of the manual
+- `mmd_lines_data.json`: contains the page number and bounding box co-ordinates associated with text/images and tables.
+
+In particular, you want the chatbot to prioritize:
+- **Accuracy**: Incorrect answers can potentially be life-harming. It is better to respond that you don't know rather than give incorrect answers.
+- **Conciseness**: Technicians have limited time and prefer concise answers over elaborate answers
+- **Transparency**: The responses must be transparent and contain references to the user manual, as well as explain their reasoning steps to build trust with technicians.
+
 ## Task Requirements
 
 The backend service must:

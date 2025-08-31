@@ -21,16 +21,28 @@ For now, let's remove the limitation on getting the page number and bounding box
 **Indexing**
 - Chunk the paragraphs in `manual.mmd` and use a FAISS index.
 
+The split chunks are really bad, using LatexTextSplitter and MarkdownTextSplitter. This is going to effect downstream quality, but I will come back to this problem once I get the pipeline working.
+
+Possible solutions:
+- Use Mistral/Mathpix to return markdown instead of Latex-markdown.
+- 
+
 **Retrieval**
 - Take the user query and fetch from FAISS index. Let's use MMR with 10 results.
 
 **Presentation**
 - Present LLM with the results and ask it to implement it.
 
+A few decisions:
+- To reduce the time/cost, let's work on just the first chapter. I can re-run the scripts to generate index for the whole PDF later on.
+
 ## Future Improvements
 
 Noting down ideas that might be useful:
-- 
+- Use markdown instead of LaTeX for manual? I don't know if the extra-noise added by LaTeX tags affects similarity score.
+- Re-write document chunks with context to be self-explainable.
+- Re-ranking results using Cohere or similar.
+- Use semantic chunking instead of markdown text splitter: semantic chunking finds more natural boundaries between the different paragraphs.
 
 ## Decision Log
 
