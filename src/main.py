@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from .models import ChatRequest, ChatResponse, Citation, BoundingBox
 from .retriever import Retriever
+from .presenter import Presenter
 from typing import List
 import os
 
@@ -10,12 +11,14 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Initialize retriever
+# Initialize retriever and presenter
 retriever = None
+presenter = None
 try:
     retriever = Retriever()
+    presenter = Presenter()
 except Exception as e:
-    print(f"Warning: Could not initialize retriever: {e}")
+    print(f"Warning: Could not initialize retriever/presenter: {e}")
 
 
 @app.get("/")
@@ -34,11 +37,11 @@ async def chat(request: ChatRequest):
     Returns:
         ChatResponse with markdown content and citations
     """
-    if not retriever:
+    if not retriever or not presenter:
         return ChatResponse(
             status="insufficient_info",
             citations=[],
-            content="Retriever not initialized. Please check the vector store and API key."
+            content="Retriever or presenter not initialized. Please check the vector store and API key."
         )
     
     # Retrieve relevant documents
@@ -61,14 +64,12 @@ async def chat(request: ChatRequest):
             content="No confident matches found for your query."
         )
     
-    # Combine retrieved content
-    content_parts = []
-    citations = []
+    # Generate response using presenter
+    content = presenter.present(request.query, results)
     
+    # Create citations from results
+    citations = []
     for i, (doc, score) in enumerate(results[:5]):  # Use top 5 results
-        content_parts.append(f"**Result {i+1} (score: {score:.3f}):**\n{doc.page_content}\n")
-        
-        # Add placeholder citation
         citations.append(Citation(
             page_no=1,  # Placeholder
             bbox=BoundingBox(
@@ -79,8 +80,6 @@ async def chat(request: ChatRequest):
             ),
             confidence=score
         ))
-    
-    content = "\n".join(content_parts)
     
     return ChatResponse(
         status="success",

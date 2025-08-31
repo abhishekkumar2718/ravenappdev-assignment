@@ -43,6 +43,7 @@ Noting down ideas that might be useful:
 - Re-write document chunks with context to be self-explainable.
 - Re-ranking results using Cohere or similar.
 - Use semantic chunking instead of markdown text splitter: semantic chunking finds more natural boundaries between the different paragraphs.
+- Add checks to validate that facts in the response is present in the citation and actually supports the response.
 
 ## Decision Log
 

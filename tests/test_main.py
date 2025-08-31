@@ -14,14 +14,18 @@ def test_root_endpoint():
     assert response.json() == {"message": "Raven Chat API", "version": "1.0.0"}
 
 
+@patch('src.main.presenter')
 @patch('src.main.retriever')
-def test_chat_endpoint_success(mock_retriever):
+def test_chat_endpoint_success(mock_retriever, mock_presenter):
     """Test chat endpoint returns success response"""
     # Mock retriever results
     mock_results = [
         (Document(page_content="Actuator types comparison", metadata={"chunk_index": 0}), 0.85),
     ]
     mock_retriever.retrieve.return_value = mock_results
+    
+    # Mock presenter response
+    mock_presenter.present.return_value = "The actuator types comparison shows [pneumatic and electric types]([1])."
     
     response = client.post(
         "/chat",
@@ -30,7 +34,7 @@ def test_chat_endpoint_success(mock_retriever):
     assert response.status_code == 200
     data = response.json()
     assert data["status"] == "success"
-    assert "Actuator types comparison" in data["content"]
+    assert "actuator types comparison" in data["content"]
     assert len(data["citations"]) == 1
     assert data["citations"][0]["confidence"] == 0.85
 
@@ -41,14 +45,18 @@ def test_chat_invalid_request():
     assert response.status_code == 422  # Validation error
 
 
+@patch('src.main.presenter')
 @patch('src.main.retriever')
-def test_chat_response_structure(mock_retriever):
+def test_chat_response_structure(mock_retriever, mock_presenter):
     """Test that chat response has the correct structure"""
     # Mock retriever results
     mock_results = [
         (Document(page_content="Sample content", metadata={}), 0.75),
     ]
     mock_retriever.retrieve.return_value = mock_results
+    
+    # Mock presenter response
+    mock_presenter.present.return_value = "Sample response with [citation]([1])."
     
     response = client.post(
         "/chat",
@@ -68,8 +76,9 @@ def test_chat_response_structure(mock_retriever):
     assert isinstance(data["citations"], list)
 
 
+@patch('src.main.presenter')
 @patch('src.main.retriever')
-def test_chat_with_retriever_success(mock_retriever):
+def test_chat_with_retriever_success(mock_retriever, mock_presenter):
     """Test chat endpoint with successful retrieval"""
     # Mock retriever results
     mock_results = [
@@ -77,6 +86,9 @@ def test_chat_with_retriever_success(mock_retriever):
         (Document(page_content="Actuator types comparison", metadata={"chunk_index": 1}), 0.75)
     ]
     mock_retriever.retrieve.return_value = mock_results
+    
+    # Mock presenter response
+    mock_presenter.present.return_value = "Control valve sizing depends on [flow coefficient]([1]) and actuator types include [pneumatic]([2])."
     
     response = client.post(
         "/chat",
@@ -87,7 +99,6 @@ def test_chat_with_retriever_success(mock_retriever):
     data = response.json()
     assert data["status"] == "success"
     assert "Control valve sizing" in data["content"]
-    assert "Actuator types" in data["content"]
     assert len(data["citations"]) > 0
     assert data["citations"][0]["confidence"] == 0.85
 
@@ -129,6 +140,7 @@ def test_chat_with_no_results(mock_retriever):
     assert "No relevant information" in data["content"]
 
 
+@patch('src.main.presenter', None)
 @patch('src.main.retriever', None)
 def test_chat_retriever_not_initialized():
     """Test chat endpoint when retriever is not initialized"""
@@ -140,4 +152,4 @@ def test_chat_retriever_not_initialized():
     assert response.status_code == 200
     data = response.json()
     assert data["status"] == "insufficient_info"
-    assert "Retriever not initialized" in data["content"]
+    assert "Retriever or presenter not initialized" in data["content"]
