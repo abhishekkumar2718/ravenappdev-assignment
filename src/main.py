@@ -75,14 +75,21 @@ async def chat(request: ChatRequest):
         source = doc.metadata.get('source', 'manual')
         chunk_id = f"{source}_chunk_{chunk_index:03d}"
         
+        # Extract page number and bounding box from metadata
+        page_no = doc.metadata.get('page', 1)  # Default to page 1 if not found
+        bbox_data = doc.metadata.get('bbox', {})
+        
+        # Create BoundingBox from metadata
+        bbox = BoundingBox(
+            top_left_x=bbox_data.get('top_left_x', 0),
+            top_left_y=bbox_data.get('top_left_y', 0),
+            width=bbox_data.get('width', 0),
+            height=bbox_data.get('height', 0)
+        )
+        
         citations.append(Citation(
-            page_no=1,  # Placeholder
-            bbox=BoundingBox(
-                top_left_x=100,
-                top_left_y=100,
-                width=500,
-                height=300
-            ),
+            page_no=page_no,
+            bbox=bbox,
             confidence=score,
             chunk_id=chunk_id
         ))

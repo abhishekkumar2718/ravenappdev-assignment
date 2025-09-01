@@ -10,8 +10,9 @@ import json
 import argparse
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Tuple
 import pickle
+import re
 
 from dotenv import load_dotenv
 from langchain.text_splitter import MarkdownTextSplitter
@@ -22,25 +23,170 @@ from langchain.schema import Document
 load_dotenv()
 
 
+class DocumentLocationMapper:
+    """Maps document chunks to their page numbers and bounding boxes."""
+    
+    def __init__(self, mmd_lines_data: Dict[str, Any]):
+        """
+        Initialize the mapper with MMD lines data.
+        
+        Args:
+            mmd_lines_data: Dictionary containing pages and line information
+        """
+        self.mmd_lines_data = mmd_lines_data
+        self.reset_position()
+    
+    def reset_position(self):
+        """Reset the search position to the beginning."""
+        self.current_page_idx = 0
+        self.current_line_idx = 0
+    
+    def normalize_text(self, text: str) -> str:
+        """Normalize text for matching by removing extra whitespace and newlines."""
+        return ' '.join(text.split()).strip()
+    
+    def extract_first_content_line(self, chunk_text: str) -> str:
+        """Extract the first meaningful content line, skipping headers."""
+        lines = chunk_text.strip().split('\n')
+        
+        for line in lines:
+            line = line.strip()
+            # Skip empty lines
+            if not line:
+                continue
+            # Skip LaTeX commands and headers
+            if line.startswith('\\section') or line.startswith('\\begin') or line.startswith('\\caption'):
+                continue
+            # Return first actual content line
+            return line
+        
+        return ""
+    
+    def find_location(self, document_text: str) -> Optional[Dict[str, Any]]:
+        """
+        Find page and bounding box for a document chunk.
+        
+        Args:
+            document_text: The document chunk text
+            
+        Returns:
+            Dictionary with 'page' and 'bbox' or None if not found
+        """
+        # Special handling for figures/tables
+        if document_text.strip().startswith('\\begin{figure}') or document_text.strip().startswith('\\begin{table}'):
+            return self._find_figure_or_table_location(document_text)
+        
+        # Get first content line
+        first_line = self.extract_first_content_line(document_text)
+        if not first_line:
+            return None
+            
+        # Normalize for matching
+        normalized_first_line = self.normalize_text(first_line)
+        
+        # Take just the first 30-50 characters for matching
+        # This helps when OCR splits sentences across lines
+        search_text = normalized_first_line[:40] if len(normalized_first_line) > 40 else normalized_first_line
+        
+        # Two-pointer search starting from last position
+        pages = self.mmd_lines_data.get('pages', [])
+        
+        for page_idx in range(self.current_page_idx, len(pages)):
+            page_data = pages[page_idx]
+            lines = page_data.get('lines', [])
+            
+            start_line_idx = self.current_line_idx if page_idx == self.current_page_idx else 0
+            
+            for line_idx in range(start_line_idx, len(lines)):
+                line_data = lines[line_idx]
+                line_text = self.normalize_text(line_data.get('text', ''))
+                
+                # Check if the search text appears in this line
+                if search_text in line_text:
+                    # Update pointers for next search
+                    self.current_page_idx = page_idx
+                    self.current_line_idx = line_idx
+                    
+                    return {
+                        'page': page_data.get('page'),
+                        'bbox': line_data.get('region')
+                    }
+                
+                # Also check if this line is the start of our text
+                # (handles case where our chunk starts mid-line in the OCR)
+                if line_text and search_text.startswith(line_text):
+                    # Check if the next line continues our text
+                    if line_idx + 1 < len(lines):
+                        next_line = self.normalize_text(lines[line_idx + 1].get('text', ''))
+                        combined = line_text + ' ' + next_line
+                        if search_text in combined:
+                            self.current_page_idx = page_idx
+                            self.current_line_idx = line_idx
+                            
+                            return {
+                                'page': page_data.get('page'),
+                                'bbox': line_data.get('region')
+                            }
+        
+        return None
+    
+    def _find_figure_or_table_location(self, document_text: str) -> Optional[Dict[str, Any]]:
+        """Special handling for figures and tables."""
+        # Look for Figure X-X or Table X-X patterns
+        figure_match = re.search(r'Figure \d+-\d+', document_text)
+        table_match = re.search(r'Table \d+-\d+', document_text)
+        
+        search_text = figure_match.group(0) if figure_match else (table_match.group(0) if table_match else None)
+        
+        if not search_text:
+            return None
+            
+        # Search for this specific figure/table
+        pages = self.mmd_lines_data.get('pages', [])
+        
+        for page_idx in range(self.current_page_idx, len(pages)):
+            page_data = pages[page_idx]
+            
+            for line_idx, line_data in enumerate(page_data.get('lines', [])):
+                if search_text in line_data.get('text', ''):
+                    self.current_page_idx = page_idx
+                    self.current_line_idx = line_idx
+                    
+                    return {
+                        'page': page_data.get('page'),
+                        'bbox': line_data.get('region')
+                    }
+        
+        return None
+
+
 class Indexer:
     """Indexes markdown documents for semantic search using FAISS and Gemini embeddings."""
     
-    def __init__(self, api_key: str = None):
+    def __init__(self, api_key: str = None, mmd_lines_path: str = None):
         """
         Initialize the indexer with Gemini API key.
         
         Args:
             api_key: Google Gemini API key. If not provided, reads from GOOGLE_API_KEY env var.
+            mmd_lines_path: Path to mmd_lines_data.json file for location mapping
         """
         self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
-        if not self.api_key:
-            raise ValueError("Google API key must be provided or set in GOOGLE_API_KEY environment variable")
         
-
-        self.embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/gemini-embedding-001",
-            google_api_key=self.api_key
-        )
+        # Only initialize embeddings if we have a real API key
+        self.embeddings = None
+        if self.api_key and self.api_key != "dummy-key-for-chunk-only":
+            self.embeddings = GoogleGenerativeAIEmbeddings(
+                model="models/gemini-embedding-001",
+                google_api_key=self.api_key
+            )
+        
+        # Load mmd_lines_data if provided
+        self.location_mapper = None
+        if mmd_lines_path and os.path.exists(mmd_lines_path):
+            with open(mmd_lines_path, 'r', encoding='utf-8') as f:
+                mmd_lines_data = json.load(f)
+                self.location_mapper = DocumentLocationMapper(mmd_lines_data)
         
     def load_markdown(self, file_path: str) -> str:
         """
@@ -73,17 +219,30 @@ class Indexer:
         
         chunks = splitter.split_text(text)
         
+        # Reset location mapper position for new chunking session
+        if self.location_mapper:
+            self.location_mapper.reset_position()
+        
         # Create Document objects with metadata
         documents = []
         for i, chunk in enumerate(chunks):
+            metadata = {
+                "chunk_index": i,
+                "source": source_file,
+                "total_chunks": len(chunks),
+                "chunk_size": len(chunk)
+            }
+            
+            # Add location information if mapper is available
+            if self.location_mapper:
+                location = self.location_mapper.find_location(chunk)
+                if location:
+                    metadata["page"] = location["page"]
+                    metadata["bbox"] = location["bbox"]
+            
             doc = Document(
                 page_content=chunk,
-                metadata={
-                    "chunk_index": i,
-                    "source": source_file,
-                    "total_chunks": len(chunks),
-                    "chunk_size": len(chunk)
-                }
+                metadata=metadata
             )
             documents.append(doc)
         
@@ -156,6 +315,9 @@ class Indexer:
         Returns:
             FAISS vector store
         """
+        if not self.embeddings:
+            raise ValueError("Embeddings not initialized. Please provide a valid API key.")
+            
         print(f"Building FAISS index from {len(documents)} chunks...")
         vectorstore = FAISS.from_documents(documents, self.embeddings)
         return vectorstore
@@ -240,6 +402,54 @@ class Indexer:
         save_path = self.save_index(vectorstore)
         
         return save_path
+    
+    def chunk_file(self, file_path: str, chunk_size: int = 1000, chunk_overlap: int = 200, preview: bool = True) -> List[Document]:
+        """
+        Create chunks from a markdown file without building the vector index.
+        
+        Args:
+            file_path: Path to the markdown file to chunk
+            chunk_size: Target size of each chunk in characters
+            chunk_overlap: Number of characters to overlap between chunks
+            preview: Whether to print chunk previews
+            
+        Returns:
+            List of Document objects containing chunks
+        """
+        print(f"Loading markdown file: {file_path}")
+        text = self.load_markdown(file_path)
+        
+        print("Creating markdown-based chunks...")
+        documents = self.create_chunks(text, source_file=os.path.basename(file_path), chunk_size=chunk_size, chunk_overlap=chunk_overlap)
+        print(f"Created {len(documents)} chunks")
+        
+        if preview:
+            print("\n" + "="*80)
+            print("CHUNK PREVIEW")
+            print("="*80 + "\n")
+            
+            for i, doc in enumerate(documents):
+                print(f"--- Chunk {i + 1}/{len(documents)} ---")
+                print(f"Size: {doc.metadata['chunk_size']} characters")
+                
+                # Show location info if available
+                if 'page' in doc.metadata:
+                    print(f"Page: {doc.metadata['page']}")
+                    bbox = doc.metadata.get('bbox', {})
+                    print(f"Bounding Box: x={bbox.get('top_left_x')}, y={bbox.get('top_left_y')}, w={bbox.get('width')}, h={bbox.get('height')}")
+                
+                # Show first 500 characters of content
+                preview_text = doc.page_content[:500] + "..." if len(doc.page_content) > 500 else doc.page_content
+                print(f"Content preview:\n{preview_text}")
+                print()
+        
+        # Save chunks
+        base_name = os.path.basename(file_path).replace('.mmd', '')
+        chunks_cache_path = f"data/chunks_{base_name}.json"
+        os.makedirs("data", exist_ok=True)
+        self.save_chunks(documents, chunks_cache_path)
+        
+        return documents
 
 
 def main():
@@ -273,21 +483,49 @@ def main():
         type=str,
         help="Google API key (can also be set via GOOGLE_API_KEY env var)"
     )
+    parser.add_argument(
+        "--mmd-lines",
+        type=str,
+        default="mmd_lines_data.json",
+        help="Path to mmd_lines_data.json file for location mapping"
+    )
+    parser.add_argument(
+        "--chunk-only",
+        action="store_true",
+        help="Only create chunks without building vector index"
+    )
+    parser.add_argument(
+        "--no-preview",
+        action="store_true",
+        help="Skip chunk preview in chunk-only mode"
+    )
     
     args = parser.parse_args()
     
     try:
-        indexer = Indexer(api_key=args.api_key)
-        save_path = indexer.index_file(
-            args.input,
-            use_cached_chunks=not args.no_cache,
-            chunk_size=args.chunk_size,
-            chunk_overlap=args.chunk_overlap
-        )
-        print(f"\nIndexing complete! Index saved to: {save_path}")
+        if args.chunk_only:
+            # Chunk-only mode doesn't require API key
+            indexer = Indexer(api_key=args.api_key or "dummy-key-for-chunk-only", mmd_lines_path=args.mmd_lines)
+            indexer.chunk_file(
+                args.input,
+                chunk_size=args.chunk_size,
+                chunk_overlap=args.chunk_overlap,
+                preview=not args.no_preview
+            )
+            print(f"\nChunking complete! Chunks saved to data/chunks_{os.path.basename(args.input).replace('.mmd', '')}.json")
+        else:
+            # Full indexing mode
+            indexer = Indexer(api_key=args.api_key, mmd_lines_path=args.mmd_lines)
+            save_path = indexer.index_file(
+                args.input,
+                use_cached_chunks=not args.no_cache,
+                chunk_size=args.chunk_size,
+                chunk_overlap=args.chunk_overlap
+            )
+            print(f"\nIndexing complete! Index saved to: {save_path}")
         
     except Exception as e:
-        print(f"Error during indexing: {e}")
+        print(f"Error during processing: {e}")
         return 1
     
     return 0
