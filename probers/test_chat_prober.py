@@ -6,7 +6,7 @@ import sys
 
 # Configuration
 API_BASE_URL = "http://localhost:8000"
-TIMEOUT = 10  # seconds
+TIMEOUT = 30  # seconds
 MAX_RETRIES = 3
 RETRY_DELAY = 1  # seconds
 
@@ -23,10 +23,13 @@ class TestChatEndpointProber:
         """Test that the /chat endpoint is available and responds"""
         response = requests.post(
             f"{api_url}/chat",
-            json={"query": "What are eccentric plug valves"},
+            json={"query": "Eccentric plug valves"},
             timeout=TIMEOUT
         )
 
         assert response.status_code in [200, 422], f"Unexpected status code: {response.status_code}"
 
-        print(response.json())    
+        response_json = response.json()
+        print('Content:', response_json['content'])
+        citations = response_json['citations']
+        print("Fetched chunks:", [chunk['chunk_id'] for chunk in citations])

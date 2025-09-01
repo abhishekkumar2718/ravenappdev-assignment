@@ -4,6 +4,7 @@ Presenter module for generating concise responses using Gemini-2.0-flash.
 """
 
 import os
+import re
 from typing import List, Tuple
 from langchain.schema import Document
 import google.generativeai as genai
@@ -44,14 +45,54 @@ class Presenter:
         if not results:
             return "No relevant information found for your query."
         
-        # Prepare context from retrieved documents
+        # Prepare context from retrieved documents with entity awareness
         context_parts = []
+        table_citations = []
+        figure_citations = []
+        
         for i, (doc, score) in enumerate(results[:5]):  # Use top 5 results
-            context_parts.append(f"[Citation {i+1}] (confidence: {score:.2f}):\n{doc.page_content}")
+            chunk_type = doc.metadata.get('chunk_type', 'section')
+            chunk_id = doc.metadata.get('chunk_id', f'chunk_{i}')
+            
+            # Format citation label based on entity type
+            if chunk_type == 'table':
+                # Extract table number if available
+                table_match = re.search(r'Table (\d+-\d+)', doc.page_content)
+                if table_match:
+                    citation_label = f"Table {table_match.group(1)}"
+                else:
+                    citation_label = chunk_id
+                table_citations.append((i+1, citation_label))
+            elif chunk_type == 'image':
+                # Extract figure number if available
+                figure_match = re.search(r'Figure (\d+-\d+)', doc.page_content)
+                if figure_match:
+                    citation_label = f"Figure {figure_match.group(1)}"
+                else:
+                    citation_label = chunk_id
+                figure_citations.append((i+1, citation_label))
+            else:
+                section_title = doc.metadata.get('section_title', 'Section')
+                citation_label = f"{section_title}"
+            
+            context_parts.append(
+                f"[Citation {i+1}] ({chunk_type}, confidence: {score:.2f}, ID: {citation_label}):\n"
+                f"{doc.page_content}"
+            )
         
         context = "\n\n".join(context_parts)
         
-        # Create prompt for Gemini
+        # Determine if results contain specific entity types
+        has_tables = any(doc.metadata.get('chunk_type') == 'table' for doc, _ in results[:5])
+        has_figures = any(doc.metadata.get('chunk_type') == 'image' for doc, _ in results[:5])
+        
+        # Create entity-aware prompt instructions
+        entity_instructions = ""
+        if has_tables:
+            entity_instructions += "\n7. When presenting table data, format it clearly and include the table identifier (e.g., Table 1-2)"
+        if has_figures:
+            entity_instructions += "\n8. When referencing figures, describe them clearly and include the figure identifier (e.g., Figure 1-6)"
+        
         prompt = f"""You are a technical assistant helping technicians with control valve queries. 
 Based ONLY on the provided citations, answer the user's question concisely and accurately.
 
@@ -61,12 +102,14 @@ CRITICAL INSTRUCTIONS:
 3. Reference citations inline using markdown link syntax like [this information]([1])
 4. If information is not in the citations, state clearly that it's not available
 5. Do not add any information not present in the citations
-6. Focus on accuracy - incorrect answers can be life-harming
+6. Focus on accuracy - incorrect answers can be life-harming{entity_instructions}
 
 User Query: {query}
 
 Citations:
 {context}
+
+Note: Citations may include sections, tables, and figures. Pay attention to the citation type and ID.
 
 Provide a concise response using markdown format with inline citation links:"""
         

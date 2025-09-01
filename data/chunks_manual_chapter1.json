@@ -1,0 +1,2161 @@
+{
+  "documents": [
+    {
+      "page_content": "\\section*{Section 1:}\n\n",
+      "metadata": {
+        "chunk_id": "section_0",
+        "chunk_type": "section",
+        "section_title": "Section 1:",
+        "section_path": [
+          "Section 1:"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\section*{Control Valve Sizing and Selection}\n\n",
+      "metadata": {
+        "chunk_id": "section_1",
+        "chunk_type": "section",
+        "section_title": "Control Valve Sizing and Selection",
+        "section_path": [
+          "Section 1:",
+          "Control Valve Sizing and Selection"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\section*{Chapter 1}\n\n",
+      "metadata": {
+        "chunk_id": "section_2",
+        "chunk_type": "section",
+        "section_title": "Chapter 1",
+        "section_path": [
+          "Chapter 1"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\section*{Control Valve Selection}\n\nPicking a control valve for a particular application used to be straightforward. Usually only one general type of valve was considered, a sliding-stem valve. Each manufacturer offered a product suitable for the job, and the choice among them depended upon such obvious matters as cost, delivery, vendor relationships and user preference.\n\nToday, control valve selection is considerably more complex, especially for engineers with limited experience or those who have not kept up with changes in the control valve industry.\n\nFor many applications, an assortment of slidingstem and rotary valve styles are available. Some are touted as \"universal\" valves for almost any size and service, while others are claimed to be optimum solutions for narrowly defined needs. Even the most knowledgeable user may wonder whether they are really getting the most for their money in the control valves they have been specifying.\n\nLike most decisions, selection of a control valve involves a great number of variables. Presented here is an overview of the selection process. The discussion includes categorization of available valve types and a set of criteria to be considered in the selection process.\n\n",
+      "metadata": {
+        "chunk_id": "section_3",
+        "chunk_type": "section",
+        "section_title": "Control Valve Selection",
+        "section_path": [
+          "Chapter 1",
+          "Control Valve Selection"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 7,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 688,
+          "width": 757,
+          "height": 47
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-007.jpg?height=885&width=462&top_left_y=696&top_left_x=1257}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-1. Modern control valve combines actuator, valve assembly and digital valve controller to provide maximum performance in a wide variety of control applications.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_1",
+        "chunk_type": "image",
+        "section_title": "General Categories of Control Valves",
+        "section_path": [
+          "Chapter 1",
+          "General Categories of Control Valves"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 7,
+        "bbox": {
+          "top_left_x": 1257,
+          "top_left_y": 696,
+          "width": 462,
+          "height": 885
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-008.jpg?height=1026&width=961&top_left_y=284&top_left_x=552}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-2. Standard globe sliding-stem valve design is typified by the ET. A broad range of sizes, materials and end connections is available. The balanced plug reduces plug force and allows use of smaller actuators. These valves are the first choice for applications less than NPS 3 size.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_2",
+        "chunk_type": "image",
+        "section_title": "General Categories of Control Valves",
+        "section_path": [
+          "Chapter 1",
+          "General Categories of Control Valves"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 8,
+        "bbox": {
+          "top_left_x": 552,
+          "top_left_y": 284,
+          "width": 961,
+          "height": 1026
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-008.jpg?height=866&width=828&top_left_y=1501&top_left_x=655}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-3. Severe service capability in globe valves demonstrated by this Large ET. The drilled hole cage provides attenuation of flow noise by splitting the flow into multiple passages. Spacing of the holes is carefully controlled to eliminate jet interaction and higher resultant noise levels.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_3",
+        "chunk_type": "image",
+        "section_title": "General Categories of Control Valves",
+        "section_path": [
+          "Chapter 1",
+          "General Categories of Control Valves"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 8,
+        "bbox": {
+          "top_left_x": 655,
+          "top_left_y": 1501,
+          "width": 828,
+          "height": 866
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{General Categories of Control Valves}\n\"Control valve\" in this discussion means any pow-er-operated valve, whether used for throttling or for on-off control. Other valve varieties such as motorized gate valves, louvers, pinch valves and self-operated regulators are not considered here.\n\n[Figure figure_1_1]\n\nThe major valve types, sliding-stem and rotary, are further divided within Table 1-2 into a total of nine subcategories according to relative performance and cost. Despite variations found within each category, such as cage-guiding versus stem-guiding, all valves within a given subcategory may be considered very much alike in the early stages of the selection process.\n\nSelecting a valve involves narrowing down to one of these nine subcategories and then comparing specific valves in that group.\n\n[Figure figure_1_2]\n\n[Figure figure_1_3]\n\n",
+      "metadata": {
+        "chunk_id": "section_4",
+        "chunk_type": "section",
+        "section_title": "General Categories of Control Valves",
+        "section_path": [
+          "Chapter 1",
+          "General Categories of Control Valves"
+        ],
+        "entity_ids": [
+          "figure_1_1",
+          "figure_1_2",
+          "figure_1_3"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-009.jpg?height=684&width=671&top_left_y=281&top_left_x=1192}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-4. EHD is typical of high-pressure globe valves. Rated at ASME CL2500, it provides throttling control of high-pressure steam and fluids. Anti-noise and anti-cavitation trims are available to handle flow problems.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_4",
+        "chunk_type": "image",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 9,
+        "bbox": {
+          "top_left_x": 1192,
+          "top_left_y": 281,
+          "width": 671,
+          "height": 684
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-009.jpg?height=717&width=711&top_left_y=1230&top_left_x=1184}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-5. NPS 1 Baumann 24000 Little Scotty valve with a size 32 actuator and a FIELDVUE DVC6200}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_5",
+        "chunk_type": "image",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 9,
+        "bbox": {
+          "top_left_x": 1184,
+          "top_left_y": 1230,
+          "width": 711,
+          "height": 717
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-010.jpg?height=608&width=1183&top_left_y=295&top_left_x=482}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-6. High-pressure ball valves feature heavy shafts and full ball designs. This V250 is suitable for pressure drops to 2220 psig. ASME CL600 and CL900 bodies are available-sizes range to NPS 24.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_6",
+        "chunk_type": "image",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 10,
+        "bbox": {
+          "top_left_x": 482,
+          "top_left_y": 295,
+          "width": 1183,
+          "height": 608
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-010.jpg?height=440&width=1001&top_left_y=1138&top_left_x=596}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-7. Applications to ASME CL600 can be handled by the V150/V200/V300 Vee-Ball ${ }^{\\text {m }}$. This product incorporates many features to improve throttling performance and rangeability. Tight shutoff is achieved by using either heavy-duty metal seals or composition seals.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_7",
+        "chunk_type": "image",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 10,
+        "bbox": {
+          "top_left_x": 596,
+          "top_left_y": 1138,
+          "width": 1001,
+          "height": 440
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Sliding-Stem Valves}\n\nThe most versatile of control valves are the slidingstem designs. Globe, angle, and Y-pattern valves can be purchased in sizes ranging from NPS 1/236. More choices of materials, end connections and control characteristics are included here than in any other product family.\n\nGlobe valves are available in cage-guided, postguided and stem-guided designs, with flanged, screwed or weld ends. Economical cast iron as well as carbon steel, stainless steel and other high-performance body materials are available. Available valve body pressure ratings range to ASME CL4500 or API 10,000.\n\nThe globe valve's precise throttling capabilities, overall performance and general sturdiness make them a bargain despite their slight cost premium. With the globe valve, the buyer gets a rugged, dependable unit intended for long, trouble-free service.\n\nSliding-stem valves are ruggedly built to handle field conditions such as piping stress, vibration, and temperature changes. In sizes through NPS 3 -4 , incremental costs over rotary valves are low in contrast to the increments in benefits received.\n\nFor many extreme service conditions, sliding-stem valves are the only suitable choice. These situations include high pressures and temperatures, excessive noise, and the potential for cavitation. Due to process demands, these applications require the rugged construction of the sliding-stem design.\n\nBarstock valves are small, economical slidingstem valves featuring bodies machined from bar stock. Body sizes range from fractions of NPS 1 3; flow capacities generally are lower than those of general purpose valves. End connections usually are flangeless (for mounting between piping flanges) or screwed.\n\nThe main advantage of the barstock valve is that far more materials are readily available in bar form than in cast form. Consequently, these valves are often used where there are special corrosion considerations.\n\nAlso, the compactness and general high-quality construction of barstock valves make them attractive for low flow rate applications. Overall, they are an economical choice when they can be used.\n\n[Figure figure_1_4]\n\n[Figure figure_1_5]\n\nThe third subcategory, which involves the lowest cost products among sliding-stem valves, utilizes \"economy\" bodies (Figure 1-5). These valves are used for low-pressure steam, air and water applications that are not demanding. Sizes available range from NPS 1/2-4. Body materials include bronze, cast iron, steel and SST. Pressure classes generally stop at ASME CL300. Compared to regular sliding-stem valves, these units are very simple; their actuators are smaller, and their construc-\n\n[Figure figure_1_6]\n\n[Figure figure_1_7]\ntion is economical. Severe service trims for noise and cavitation service are not available in these products.\n\n",
+      "metadata": {
+        "chunk_id": "section_5",
+        "chunk_type": "section",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [
+          "figure_1_4",
+          "figure_1_5",
+          "figure_1_6",
+          "figure_1_7"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-011.jpg?height=763&width=1562&top_left_y=292&top_left_x=295}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-8. The V500 eccentric plug valve is specially designed for severe rotary applications. Since the valve plug \"cams\" into the seat ring upon closure, it features tight shutoff with globe valve style seating. It also offers excellent resistance to abrasive wear and flashing induced erosion.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_8",
+        "chunk_type": "image",
+        "section_title": "Ball Valves",
+        "section_path": [
+          "Chapter 1",
+          "Ball Valves"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 11,
+        "bbox": {
+          "top_left_x": 295,
+          "top_left_y": 292,
+          "width": 1562,
+          "height": 763
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Ball Valves}\n\nThere are two subcategories of ball valves. The through-bore or full-ball type illustrated in Figure 1-6 is used typically for high pressure drop throttling and on-off applications in sizes to NPS 24. Full port designs exhibit high flow capacity and low susceptibility to wear by erosive streams. However, sluggish flow response in the first 20\\% of ball travel may make full-bore ball valves unsuitable for some throttling applications.\n\nAnother popular kind of ball valve is the seg-mented-ball style (Figure 1-7). This subcategory utilizes a reduced bore, and the edge of the ball segment has a contoured notch shape for better throttling control and higher rangeability. Intended primarily for modulating service, segmented-ball valves are generally higher in overall control performance than full-ball products.\n\nSegmented-ball valves with their splined shaft connections are engineered to eliminate lost motion, which is detrimental to performance. The use of heavy-duty metal and fluoroplastic sealing elements allows wide temperature and fluid applicability. Their straight-through flow design achieves high capacity with sizes ranging through NPS 24 and pressure ratings to ASME CL600. Price is generally lower than that of globe valves.\n\n[Figure figure_1_8]\n\n",
+      "metadata": {
+        "chunk_id": "section_6",
+        "chunk_type": "section",
+        "section_title": "Ball Valves",
+        "section_path": [
+          "Chapter 1",
+          "Ball Valves"
+        ],
+        "entity_ids": [
+          "figure_1_8"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-012.jpg?height=454&width=1462&top_left_y=292&top_left_x=355}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-9. High performance butterfly valves provide excellent performance and value. High-pressure capability, tight shutoff and excellent control are featured as standard. This 8560 design is made for ASME CL150 applications.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_9",
+        "chunk_type": "image",
+        "section_title": "Eccentric Plug Valves",
+        "section_path": [
+          "Chapter 1",
+          "Eccentric Plug Valves"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 12,
+        "bbox": {
+          "top_left_x": 355,
+          "top_left_y": 292,
+          "width": 1462,
+          "height": 454
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Eccentric Plug Valves}\n\nThis class of valves combines many features of sliding-stem and rotary products. Eccentric plug valves feature rotary actuation. But, unlike most rotary valves, this product utilizes a massive, rigid seat design.\n\nEccentric-plug valves (Figure 1-8) exhibit excellent throttling capability and resistance to erosion. Thus, many of the good aspects of both rotary and sliding-stem designs are combined.\n\nSizes generally range through NPS 8; pressure ratings go to ASME CL600. Both flanged and flangeless body styles are available in a variety of materials.\n\nThe requirement for zero or low leakage gave rise to new designs such as the lined and high performance butterfly valves (BFV's).\n\nLined butterfly valves feature an elastomer or fluoropolymer (TFE) lining that contacts the disk to provide tight shutoff. Since this valve design depends on interference between the disc and liner for shutoff, it is more limited in pressure drop. Temperature ranges typically are limited due to the elastomer disk seal.\n\nIn addition to serving as the disk seal, the liner also protects the inner bore of the valve body from the process fluid, which allows these valves to be used in many corrosive situations. Elastomer-lined BFV's are generally the lowest price products available as control valves in medium to large sizes.\n\nHeavy shafts and discs, full-rated bodies and sophisticated seals that allow tight shutoff against high pressures characterize high performance but-\n\n[Figure figure_1_9]\nterfly valves such as the one in Figure 1-9. These valves provide an excellent combination of performance features, lightweight and very reasonable pricing.\n\nIn offset disc designs, eccentric shaft mounting allows the valve disc to swing clear of its seal to minimize wear and torque. The offset disc allows uninterrupted sealing and a seal ring that can be replaced without removing the disc. High performance butterfly valves come in sizes from NPS 2 through NPS 72, with flangeless, lugged, double flanged connections, carbon steel or stainless steel bodies, and pressure ratings to ASME CL2500. Tight metal-to-metal seals, made possible with advanced eccentric design, provide tight shutoff in applications that are too hot for elastomer lined valves. Considering this tight shutoff capability and heavy-duty construction, high performance butterfly valves can be a suitable option to many applications where sliding-stem valves are normally specified.\n\n",
+      "metadata": {
+        "chunk_id": "section_7",
+        "chunk_type": "section",
+        "section_title": "Eccentric Plug Valves",
+        "section_path": [
+          "Chapter 1",
+          "Eccentric Plug Valves"
+        ],
+        "entity_ids": [
+          "figure_1_9"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\section*{General Selection Criteria}\n\nMost of the considerations that guide the selection of valve type and brand are rather basic. However, there are some matters that may be overlooked by users whose familiarity is mainly limited to just one or a few valve types. Table 1-1 below provides a checklist of important criteria; each is discussed at length following the table.\n\n",
+      "metadata": {
+        "chunk_id": "section_8",
+        "chunk_type": "section",
+        "section_title": "General Selection Criteria",
+        "section_path": [
+          "Chapter 1",
+          "General Selection Criteria"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 12,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 1946,
+          "width": 776,
+          "height": 41
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{table}\n\\captionsetup{labelformat=empty}\n\\caption{Table 1-1. Suggested General Criteria for Selecting Type and Brand of Control Valve}\n\\begin{tabular}{|l|}\n\\hline Body pressure rating \\\\\n\\hline High and low temperature limits \\\\\n\\hline Material compatibility and durability \\\\\n\\hline Inherent flow characteristic and rangeability \\\\\n\\hline Maximum pressure drop (shutoff and flowing) \\\\\n\\hline Noise and cavitation \\\\\n\\hline End connections \\\\\n\\hline Shutoff leakage \\\\\n\\hline Capacity versus cost \\\\\n\\hline Nature of flowing media \\\\\n\\hline Dynamic performance \\\\\n\\hline\n\\end{tabular}\n\\end{table}",
+      "metadata": {
+        "chunk_id": "table_1_1",
+        "chunk_type": "table",
+        "section_title": "Pressure Ratings",
+        "section_path": [
+          "Chapter 1",
+          "Pressure Ratings"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 12,
+        "bbox": {
+          "top_left_x": 243,
+          "top_left_y": 2097,
+          "width": 758,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Pressure Ratings}\n\nBody pressure ratings ordinarily are considered according to ASME pressure classes-the most common ones for steel and stainless steel being\n\nClasses 150, 300 and 600. (Source documents are ASME/ANSI Standards B16.34, \"Steel Valves,\" and ANSI/ASME B16.1, \"Cast Iron Pipe Flanges and Flanged Fittings.\") For a given body material, each ASME Class corresponds to a prescribed profile of maximum pressures that decrease with temperature according to the strength of the material. Each material also has a minimum and maximum service temperature based on loss of ductility or loss of strength. For most applications, the required pressure rating is dictated by the application. However, since all products are not available for all ASME Classes, it is an important consideration for selection.\n\n[Table table_1_1]\n\n",
+      "metadata": {
+        "chunk_id": "section_9",
+        "chunk_type": "section",
+        "section_title": "Pressure Ratings",
+        "section_path": [
+          "Chapter 1",
+          "Pressure Ratings"
+        ],
+        "entity_ids": [
+          "table_1_1"
+        ],
+        "source": "manual_chapter1.mmd",
+        "page": 12,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 2385,
+          "width": 733,
+          "height": 41
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Temperature Considerations}\n\nRequired temperature capabilities are also a foregone conclusion, but one that is likely to narrow valve selection possibilities. The considerations include the strength or ductility of the body material as well as relative thermal expansion of various parts.\n\nTemperature limits also may be imposed due to disintegration of soft parts at high temperatures or\nloss of resiliency at low temperatures. The soft materials under consideration include various elastomers, plastics, and PTFE. They may be found in parts such as seat rings, seal or piston rings, packing, rotary shaft bearings and butterfly valve liners. Typical upper temperature limits for elastomers are in the $200-350^{\\circ} \\mathrm{F}\\left(93-176^{\\circ} \\mathrm{C}\\right)$ range, and the general limit for PTFE is $450^{\\circ} \\mathrm{F}\\left(232^{\\circ} \\mathrm{C}\\right)$.\n\nTemperature affects valve selection by excluding certain valves that do not have high- or low-temperature options. It also may have some effect on the valve's performance. For instance, going from PTFE to metal seals for high temperatures generally increases the shutoff leakage flow. Similarly, high temperature metal bearing sleeves in rotary valves impose more friction on the shaft than do PTFE bearings, so that the shaft cannot withstand as high a pressure-drop load at shutoff. Selection of valve packing is also based largely on service temperature.\n\n",
+      "metadata": {
+        "chunk_id": "section_10",
+        "chunk_type": "section",
+        "section_title": "Temperature Considerations",
+        "section_path": [
+          "Chapter 1",
+          "Temperature Considerations"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 12,
+        "bbox": {
+          "top_left_x": 1154,
+          "top_left_y": 2162,
+          "width": 768,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Material Selection}\n\nThe third criterion in Table 1-1, material compatibility and durability, is a more complex consideration. At issue may be corrosion by the process fluid, erosion by abrasive material, flashing, cavitation or simply a matter of process pressure and temperature. The piping material usually indicates the body material. However, since velocity is higher in valves other factors must be considered. When these items are included, often valve and piping materials will differ. The trim materials, in turn, are usually a function of the body material, temperature range and qualities of the fluid.\n\n",
+      "metadata": {
+        "chunk_id": "section_11",
+        "chunk_type": "section",
+        "section_title": "Material Selection",
+        "section_path": [
+          "Chapter 1",
+          "Material Selection"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 13,
+        "bbox": {
+          "top_left_x": 243,
+          "top_left_y": 1306,
+          "width": 758,
+          "height": 47
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-013.jpg?height=681&width=703&top_left_y=276&top_left_x=1176}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-10. Many control valves offer a choice of characteristic. Selection to match process requirements is guided by simple rules. Adherence to these guidelines will help assure stable operation.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_10",
+        "chunk_type": "image",
+        "section_title": "Flow Characteristic",
+        "section_path": [
+          "Chapter 1",
+          "Flow Characteristic"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 13,
+        "bbox": {
+          "top_left_x": 1176,
+          "top_left_y": 276,
+          "width": 703,
+          "height": 681
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Flow Characteristic}\n\nThe next selection criterion, inherent flow characteristic, refers to the pattern in which the flow at constant pressure drop changes according to valve position.\n\nTypical characteristics are quick-opening, linear and equal-percentage. The choice of characteristic may have a strong influence on the stability or controllability of the process (see Table 1-3), since it represents the change of valve gain relative to travel.\n\nMost control valves are carefully \"characterized\" by means of contours on a plug, cage, or ball ele-\n\n[Figure figure_1_10]\nment. Some valves are available in a variety of characteristics to suit the application, while others offer little or no choice. To quantitatively determine the best flow characteristic for a given application, a dynamic analysis of the control loop can be performed.\n\nThe accompanying drawing illustrates typical flow characteristic curves (Figure 1-10). The quick opening flow characteristic provides for maximum change in flow rate at low valve travels with a fairly linear relationship. Additional increases in valve travel give sharply reduced changes in flow rate, and when the valve plug nears the wide open position, the change in flow rate approaches zero. In a control valve, the quick opening valve plug is used primarily for on-off service.\n\nThe linear flow characteristic curve shows that the flow rate is directly proportional to the valve travel. This proportional relationship produces a characteristic with a constant slope so that, with constant pressure drop, the valve gain will be the same at all flows. The linear valve plug is commonly specified for liquid level control and for certain flow control applications requiring constant gain.\n\nIn the equal percentage flow characteristic, equal increments of valve travel produce equal percentage changes in the existing flow. The change in flow rate is always proportional to the flow rate just before the change in valve plug, disc, or ball position is made. When the valve plug, disc, or ball is near its seat and the flow is small, the change in\nflow rate will be small; with a large flow, the change in flow rate will be large.\n\nAn equal percentage flow characteristic is used generally on pressure control applications and on other applications where a large percentage of the pressure drop is normally absorbed by the system itself with only a relatively small percentage available at the control valve. Valves with an equal percentage characteristic should also be considered where highly varying pressure drop conditions could be expected.\n\n",
+      "metadata": {
+        "chunk_id": "section_12",
+        "chunk_type": "section",
+        "section_title": "Flow Characteristic",
+        "section_path": [
+          "Chapter 1",
+          "Flow Characteristic"
+        ],
+        "entity_ids": [
+          "figure_1_10"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\section*{Rangeability}\n\nAnother aspect of a valve's flow characteristic is its rangeability, which is the ratio of its maximum and minimum controllable flow rates. Exceptionally wide rangeability may be required for certain applications to handle wide load swings or a combination of start-up, normal and maximum working conditions. Generally speaking, rotary valves-especially partial ball valves-have greater rangeability than sliding-stem varieties.\n\n",
+      "metadata": {
+        "chunk_id": "section_13",
+        "chunk_type": "section",
+        "section_title": "Rangeability",
+        "section_path": [
+          "Chapter 1",
+          "Rangeability"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 14,
+        "bbox": {
+          "top_left_x": 243,
+          "top_left_y": 905,
+          "width": 790,
+          "height": 41
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Use of Positioners}\n\nA positioner is an instrument that helps improve control by accurately positioning a control valve actuator in response to a control signal. They are useful in many applications and are required with certain actuator styles in order to match actuator and instrument pressure signals or to provide operating stability. To a certain extent, a valve with one inherent flow characteristic can also be made to perform as though it had a different characteristic by using a nonlinear (i.e., characterized) posi-tioner-actuator combination. The limitation of this approach lies in the positioner's frequency response and phase lag compared to the characteristic frequency of the process.\n\nAlthough it is common practice to use a positioner on every valve application, each application should be reviewed carefully.\n\n",
+      "metadata": {
+        "chunk_id": "section_14",
+        "chunk_type": "section",
+        "section_title": "Use of Positioners",
+        "section_path": [
+          "Chapter 1",
+          "Use of Positioners"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 14,
+        "bbox": {
+          "top_left_x": 243,
+          "top_left_y": 1414,
+          "width": 741,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Pressure Drop}\n\nThe maximum pressure drop a valve can tolerate at shutoff or when partially or fully open is an important selection criteria. Sliding-stem valves are generally superior in both regards because of the\nrugged nature of their moving parts. Many rotary valves are limited to pressure drops well below the body pressure rating, especially under flowing conditions, due to dynamic stresses that high velocity flow imposes on the disk or ball segment.\n\n",
+      "metadata": {
+        "chunk_id": "section_15",
+        "chunk_type": "section",
+        "section_title": "Pressure Drop",
+        "section_path": [
+          "Chapter 1",
+          "Pressure Drop"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 14,
+        "bbox": {
+          "top_left_x": 246,
+          "top_left_y": 2347,
+          "width": 760,
+          "height": 41
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Noise and Cavitation}\n\nNoise and cavitation are two considerations that often are grouped together because both may result from high pressure drops and large flow rates. They are treated by special modifications to standard valves. Chapter 5 discusses noise generation and abatement, while Chapter 6 discusses the cavitation phenomenon and its impact and treatment.\n\n",
+      "metadata": {
+        "chunk_id": "section_16",
+        "chunk_type": "section",
+        "section_title": "Noise and Cavitation",
+        "section_path": [
+          "Chapter 1",
+          "Noise and Cavitation"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 14,
+        "bbox": {
+          "top_left_x": 1151,
+          "top_left_y": 666,
+          "width": 750,
+          "height": 39
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-015.jpg?height=530&width=438&top_left_y=1221&top_left_x=403}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-12. Common welded end connections.}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_12",
+        "chunk_type": "image",
+        "section_title": "End Connections",
+        "section_path": [
+          "Chapter 1",
+          "End Connections"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 15,
+        "bbox": {
+          "top_left_x": 403,
+          "top_left_y": 1221,
+          "width": 438,
+          "height": 530
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{End Connections}\n\nThe three common methods of installing control valves in pipelines are by means of screwed pipe threads, bolted flanges, and welded end connections. At some point in the selection process, the valve's end connections must be considered with the question simply being whether the desired connection style is available in the valve being considered. Maintenance, weight, size, and service conditions all contribute to what end connection is used.\n\nIn some situations, this matter can limit the selection rather narrowly. For instance, if a piping specification calls for welded connections only, the choice usually is limited to sliding-stem valves.\n\nScrewed end connections, popular in small control valves, offer more economy than flanged ends. The threads usually specified are tapered female NPT (National Pipe Thread) on the valve body. They form a metal-to-metal seal by wedging over the mating male threads on the pipeline ends. This connection style is usually limited to valves not larger than NPS 2, and is not recommended for elevated temperature service.\n\nValve maintenance might be complicated by screwed end connections if it is necessary to take the body out of the pipeline. Screwed connections require breaking a flanged joint or union connection to permit unscrewing the valve body from the pipeline.\n\nFlanged end valves are easily removed from the piping and are suitable for use through the range\n![](https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-015.jpg?height=749&width=578&top_left_y=287&top_left_x=349)\n\nA7098 RING-TYPE JOINT\nFigure 1-11. Popular varieties of bolted flange end connections.\n\n[Figure figure_1_12]\nof working pressures that most control valves are manufactured (Figure 1-11).\n\nFlanged end connections can be used in a temperature range from absolute zero ( $-273^{\\circ} \\mathrm{F}$ ) to approximately $1500^{\\circ} \\mathrm{F}\\left(815^{\\circ} \\mathrm{C}\\right)$. They are used on all valve sizes. The most common flanged end connections include flat face, raised face, and ring type joint.\n\nWelded ends on control valves are leak tight at all pressures and temperatures and are economical in initial cost (Figure 1-12). Welded end valves are more difficult to remove from the line and are obviously limited to weldable materials. Welded\nends come in two styles, socket weld and buttweld.\n\n",
+      "metadata": {
+        "chunk_id": "section_17",
+        "chunk_type": "section",
+        "section_title": "End Connections",
+        "section_path": [
+          "Chapter 1",
+          "End Connections"
+        ],
+        "entity_ids": [
+          "figure_1_12"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\section*{Shutoff Capability}\n\nSome consideration must be given to a valve's shutoff capability, which usually is rated in terms of Classes specified in ANSI/FCI70-2 (Table 1-4). In service, shutoff leakage depends on many factors, including but not limited to, pressure drop, temperature, the condition of the sealing surfaces, and actuator force.\n\nSince shutoff ratings are based on standard test conditions that can be very different from service conditions, service leakage cannot be predicted accurately. However, the shutoff Class provides a good basis for comparison among valves of similar configuration. It is not uncommon for valve users to overestimate the shutoff class required.\n\nSince tight shutoff valves generally cost more both in initial cost as well as in later maintenance expense, serious consideration is warranted. Tight shutoff is particularly important in high-pressure valves, considering that leakage in these applications can lead to the ultimate destruction of the trim. Special precautions in seat material selection, seat preparation and seat load are necessary to ensure success.\n\n",
+      "metadata": {
+        "chunk_id": "section_18",
+        "chunk_type": "section",
+        "section_title": "Shutoff Capability",
+        "section_path": [
+          "Chapter 1",
+          "Shutoff Capability"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 15,
+        "bbox": {
+          "top_left_x": 1154,
+          "top_left_y": 493,
+          "width": 722,
+          "height": 41
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Flow Capacity}\n\nFinally, the criterion of capacity or size can be an overriding constraint on selection. For very large lines, sliding-stem valves are more expensive than rotary types. On the other hand, for very small flows, a suitable rotary valve may not be available.\n\nIf future plans call for significantly larger flow, then a sliding-stem valve with replaceable restricted trim may be the answer. The trim can be changed to full size trim to accommodate higher flow rates at less cost than replacing the entire valve body assembly.\n\nRotary style products generally have much higher maximum capacity than sliding-stem valves for a given body size. This fact makes rotary products attractive in applications where the pressure drop available is rather small. However, it is of little or no advantage in high-pressure drop applications such as pressure regulation or letdown.\n\n",
+      "metadata": {
+        "chunk_id": "section_19",
+        "chunk_type": "section",
+        "section_title": "Flow Capacity",
+        "section_path": [
+          "Chapter 1",
+          "Flow Capacity"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 15,
+        "bbox": {
+          "top_left_x": 1154,
+          "top_left_y": 1547,
+          "width": 757,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{table}\n\\captionsetup{labelformat=empty}\n\\caption{Table 1-2. Major Categories and Subcategories of Control Valves, with Typical General Characteristics}\n\\begin{tabular}{|l|l|l|l|l|l|l|l|}\n\\hline Valve Style & Main Characteristics & Typical Size Range, NPS & Typical Standard Body Materials & Typical Standard End Connection & Typical Pressure Ratings & Relative Flow Capacity & Relative Shutoff Capability \\\\\n\\hline Regular Sliding-stem & Heavy Duty Versatile & 1 to 24 & Carbon Steel Cast Iron Stainless & ASME Flanged Welded Screwed & To ASME CL2500 & Moderate & Excellent \\\\\n\\hline Bar Stock & Machined from Bar Stock & 1/2 to 3 & Variety of Alloys & Flangeless Screwed & To ASME CL600 & Low & Excellent \\\\\n\\hline Economy Sliding-stem & Light Duty Inexpensive & $1 / 2$ to 2 & Bronze Cast Iron Carbon Steel & Screwed & To ASME CL125 & Moderate & Good \\\\\n\\hline Thru-Bore Ball & On-Off Service & 1 to 24 & Carbon Steel Stainless & Flangeless & To ASME CL900 & High & Excellent \\\\\n\\hline Segmented Ball & Characterized for Throttling & 1 to 24 & Carbon Steel Stainless & Flangeless Flanged & To ASME CL600 & High & Excellent \\\\\n\\hline Eccentric Plug & Erosion Resistance & 1 to 8 & Carbon Steel Stainless & Flanged & To ASME CL600 & Moderate & Excellent \\\\\n\\hline Swing-Thru Butterfly & No Seal & 2 to 96 & Carbon Steel Cast Iron Stainless & Flangeless Lugged Welded & To ASME CL2500 & High & Poor \\\\\n\\hline Lined Butterfly & Elastomer or TFE Liner & 2 to 96 & Carbon Steel Cast Iron Stainless & Flangeless Lugged & To ASME CL300 & High & Good \\\\\n\\hline High Performance Butterfly & Offset Disk General Service & 2 to 72 & Carbon Steel Stainless & Flangeless Lugged & To ASME CL600 & High & Excellent \\\\\n\\hline\n\\end{tabular}\n\\end{table}",
+      "metadata": {
+        "chunk_id": "table_1_2",
+        "chunk_type": "table",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 16,
+        "bbox": {
+          "top_left_x": 243,
+          "top_left_y": 1303,
+          "width": 1701,
+          "height": 901
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{table}\n\\captionsetup{labelformat=empty}\n\\caption{Table 1-3. Control Valve Characteristic Recommendations\nLiquid Level Systems}\n\\begin{tabular}{|l|l|}\n\\hline Control Valve Pressure Drop & Best Inherent Characteristic \\\\\n\\hline Constant $\\Delta \\mathrm{P}$ & Linear \\\\\n\\hline Decreasing $\\Delta \\mathrm{P}$ with increasing load, $\\Delta \\mathrm{P}$ at maximum load $>20 \\%$ of minimum load $\\Delta \\mathrm{P}$ & Linear \\\\\n\\hline Decreasing $\\Delta \\mathrm{P}$ with increasing load, $\\Delta \\mathrm{P}$ at maximum load $<20 \\%$ of minimum load $\\Delta \\mathrm{P}$ & Equal-percentage \\\\\n\\hline Increasing $\\Delta \\mathrm{P}$ with increasing load, $\\Delta \\mathrm{P}$ at maximum load < 200\\% of minimum load $\\Delta \\mathrm{P}$ & Linear \\\\\n\\hline Increasing $\\Delta \\mathrm{P}$ with increasing load, $\\Delta \\mathrm{P}$ at maximum load $>200 \\%$ of minimum load $\\Delta \\mathrm{P}$ & Quick Opening \\\\\n\\hline\n\\end{tabular}\n\\end{table}",
+      "metadata": {
+        "chunk_id": "table_1_3",
+        "chunk_type": "table",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 17,
+        "bbox": {
+          "top_left_x": 246,
+          "top_left_y": 363,
+          "width": 1698,
+          "height": 283
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Conclusion}\n\nWe may simplify the process of selection as follows:\n\nFor most general applications, it makes sense both economically as well as technically to use sliding-stem valves for lower flow ranges, ball valves for intermediate capacities, and high performance butterfly valves for the very largest required flows.\n\nFor sizes less than NPS 3, general-purpose slid-ing-stem valves provide an exceptional value. For a minimal price premium over rotary products, they offer unparalleled performance, flexibility and service life. In NPS 3 size and larger, the premium for these devices over rotary products is warranted. For severe service applications the most frequently used and often the only available product is the sliding-stem valve.\n\nApplications ranging from NPS 4 to NPS 6 are best served by such transitional valve styles as the eccentric plug valve or the ball valve. These products have minimal body material and therefore lower cost. They also offer higher capacity levels than globe designs.\n\nIn sizes NPS 8 and larger, applications tend to have lower pressures and pressure drops than in smaller valve sizes. This gives rise to the possibility of using high-performance butterfly valves. These valves are economical, can offer tight shutoff as well as provide good control capability, not to mention capacity benefits well beyond those of globe and high-performance rotary valves.\n\nSpecial considerations may require out of the ordinary valve solutions. There are valve designs and special trims available to handle high noise applications, cavitation, high pressure, high temperature and combinations of these conditions.\n\nAfter going through all the criteria for a given application, the selection process may point to several types of valves. From there on, selection becomes a matter of price versus capability as discussed here, coupled with the inevitable personal and institutional preferences. Since no single control valve package is cost-effective over the full range of applications, it is important to keep an open mind to alternative choices.\n\n[Table table_1_2]\n\n[Table table_1_3]\n\n",
+      "metadata": {
+        "chunk_id": "section_20",
+        "chunk_type": "section",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [
+          "table_1_2",
+          "table_1_3"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\section*{Pressure Control Systems}\n\n\\begin{tabular}{|l|l|}\n\\hline Application & Best Inherent Characteristic \\\\\n\\hline Liquid Process & Equal-Percentage \\\\\n\\hline Gas Process, Large Volume (Process has a receiver, Distribution System or Transmission Line Exceeding 100 ft . of Nominal Pipe Volume), Decreasing $\\Delta \\mathrm{P}$ with Increasing Load, $\\Delta \\mathrm{P}$ at Maximum Load $>20 \\%$ of Minimum Load $\\Delta \\mathrm{P}$ & Linear \\\\\n\\hline Gas Process, Large Volume, Decreasing $\\Delta \\mathrm{P}$ with Increasing Load, $\\Delta \\mathrm{P}$ at Maximum Load < 20\\% of Minimum Load $\\Delta \\mathrm{P}$ & Equal-Percentage \\\\\n\\hline Gas Process, Small Volume, Less than 10 ft . of Pipe between Control Valve and Load Valve & Equal-Percentage \\\\\n\\hline\n\\end{tabular}\n\n",
+      "metadata": {
+        "chunk_id": "section_21",
+        "chunk_type": "section",
+        "section_title": "Pressure Control Systems",
+        "section_path": [
+          "Chapter 1",
+          "Pressure Control Systems"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 17,
+        "bbox": {
+          "top_left_x": 246,
+          "top_left_y": 761,
+          "width": 1698,
+          "height": 275
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{table}\n\\captionsetup{labelformat=empty}\n\\caption{Table 1-4. Control Valve Leakage Standards}\n\\begin{tabular}{|l|l|l|l|l|l|l|}\n\\hline ANSI I FCI 70-2 and IEC 60534-4 & \\multicolumn{3}{|c|}{Maximum Leakage} & Test Medium & \\multicolumn{2}{|c|}{Pressure and Temperature} \\\\\n\\hline Class II & \\multicolumn{3}{|c|}{0.5\\% valve capacity at full travel} & Air & \\multicolumn{2}{|c|}{Service $\\Delta \\mathrm{P}$ or 50 psig ( 3.4 bar differential), whichever is lower, at $50^{\\circ}$ or $125^{\\circ} \\mathrm{F}\\left(10^{\\circ}\\right.$ to $\\left.52^{\\circ} \\mathrm{C}\\right)$} \\\\\n\\hline Class III & \\multicolumn{3}{|c|}{0.1\\% valve capacity at full travel} & Air & \\multicolumn{2}{|c|}{Service $\\Delta \\mathrm{P}$ or 50 psig ( 3.4 bar differential), whichever is lower, at $50^{\\circ}$ or $125^{\\circ} \\mathrm{F}\\left(10^{\\circ}\\right.$ to $\\left.52^{\\circ} \\mathrm{C}\\right)$} \\\\\n\\hline Class IV & \\multicolumn{3}{|c|}{0.01\\% valve capacity at full travel} & Air & \\multicolumn{2}{|c|}{Service $\\Delta \\mathrm{P}$ or 50 psig ( 3.4 bar differential), whichever is lower, at $50^{\\circ}$ or $125^{\\circ} \\mathrm{F}\\left(10^{\\circ}\\right.$ to $\\left.52^{\\circ} \\mathrm{C}\\right)$} \\\\\n\\hline Class V & \\multicolumn{3}{|c|}{$5 \\times 10^{-4} \\mathrm{~mL} / \\mathrm{min} /$ psig $/$ inch port dia. ( 5 $\\times 10^{-12} \\mathrm{~m}^{3} / \\mathrm{sec} / \\Delta \\mathrm{bar} / \\mathrm{mm}$ port dia)} & Water & \\multicolumn{2}{|c|}{Service $\\Delta \\mathrm{P}$ at $50^{\\circ}$ or $125^{\\circ} \\mathrm{F}\\left(10^{\\circ}\\right.$ to $\\left.52^{\\circ} \\mathrm{C}\\right)$} \\\\\n\\hline Class VI & \\multicolumn{2}{|r|}{Nominal Port Diameter} & Bubbles per Minute & mL per Minute & Test Medium & Pressure \\& Temperature \\\\\n\\hline & \\multirow{9}{*}{\\begin{tabular}{l}\nIn \\\\\n1 \\\\\n1-1/2 \\\\\n2 \\\\\n2-1/2 \\\\\n3 \\\\\n4 \\\\\n6 \\\\\n8\n\\end{tabular}} & \\begin{tabular}{l}\nmm \\\\\n25 \\\\\n38 \\\\\n51 \\\\\n64 \\\\\n76 \\\\\n102 \\\\\n152 \\\\\n203\n\\end{tabular} & & & & \\multirow{9}{*}{Service $\\Delta \\mathrm{P}$ or 50 psig (3.4 bar differential), whichever is lower, at $50^{\\circ}$ or $125^{\\circ} \\mathrm{F}\\left(10^{\\circ}\\right.$ to $\\left.52^{\\circ} \\mathrm{C}\\right)$} \\\\\n\\hline & & & & & & \\\\\n\\hline & & & & & & \\\\\n\\hline & & & & & & \\\\\n\\hline & & & & & Air & \\\\\n\\hline & & & \\begin{tabular}{l}\n1 \\\\\n2 \\\\\n3 \\\\\n4 \\\\\n6 \\\\\n11 \\\\\n27 \\\\\n45\n\\end{tabular} & \\begin{tabular}{l}\n0.15 \\\\\n0.30 \\\\\n0.45 \\\\\n0.60 \\\\\n0.90 \\\\\n1.70 \\\\\n4.00 \\\\\n6.75\n\\end{tabular} & & \\\\\n\\hline & & & & & & \\\\\n\\hline & & & & & & \\\\\n\\hline & & & & & & \\\\\n\\hline\n\\end{tabular}\n\\end{table}",
+      "metadata": {
+        "chunk_id": "table_1_4",
+        "chunk_type": "table",
+        "section_title": "Flow Control Processes",
+        "section_path": [
+          "Chapter 1",
+          "Flow Control Processes"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 17,
+        "bbox": {
+          "top_left_x": 246,
+          "top_left_y": 1626,
+          "width": 1698,
+          "height": 730
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Flow Control Processes}\n\n\\begin{tabular}{|l|l|l|l|}\n\\hline \\multicolumn{2}{|c|}{Application} & \\multicolumn{2}{|c|}{Best Inherent Characteristic} \\\\\n\\hline Flow Measurement Signal to Controller & Location of Control Valve in Relation to Measuring Element & Wide Range of Flow Set Point & Small Range of Flow but Large $\\Delta \\mathrm{P}$ Change at Valve with Increasing Load \\\\\n\\hline Proportional to Flow & In Series & Linear & Equal-Percentage \\\\\n\\hline & In Bypass* & Linear & Equal-Percentage \\\\\n\\hline Proportional to Flow Squared & In Series & Linear & Equal-Percentage \\\\\n\\hline & In Bypass* & Equal-Percentage & Equal-Percentage \\\\\n\\hline \\multicolumn{4}{|l|}{*When control valve closes, flow rate increases in measuring element.} \\\\\n\\hline\n\\end{tabular}\n\n[Table table_1_4]\n\n\\footnotetext{\nCopyright 1976 Fluid Controls Institute, Inc. Reprinted with permission.\n}\n\n",
+      "metadata": {
+        "chunk_id": "section_22",
+        "chunk_type": "section",
+        "section_title": "Flow Control Processes",
+        "section_path": [
+          "Chapter 1",
+          "Flow Control Processes"
+        ],
+        "entity_ids": [
+          "table_1_4"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\begin{table}\n\\captionsetup{labelformat=empty}\n\\caption{Table 1-5. Packing Selection Guidelines for Sliding-Stem Valves}\n\\begin{tabular}{|l|l|l|l|l|l|l|l|}\n\\hline \\multirow{2}{*}{Packing System} & \\multicolumn{2}{|c|}{Maximum Pressure \\& Temperature Limits for 500 PPM Service ${ }^{(1)}$} & \\multicolumn{2}{|c|}{Application Guideline for Nonenvironmental Service ${ }^{(1)}$} & \\multirow{2}{*}{Seal Performance Index} & \\multirow{2}{*}{Service Life Index} & \\multirow{2}{*}{Packing Friction ${ }^{(2)}$} \\\\\n\\hline & Customary U.S. & Metric & Customary U.S. & Metric & & & \\\\\n\\hline Single PTFE V-Ring & 300 psig 0 to $200^{\\circ} \\mathrm{F}$ & 20.7 bar -18 to $93^{\\circ} \\mathrm{C}$ & See figure 1-16 -50 to $450^{\\circ} \\mathrm{F}$ & See figure 1-16 -46 to $232^{\\circ} \\mathrm{C}$ & Better & Long & Very low \\\\\n\\hline ENVIRO-SEAL PTFE & See figure 1-15 -50 to $450^{\\circ} \\mathrm{F}$ & See figure 2 -46 to $232^{\\circ} \\mathrm{C}$ & See figure 1-16 -50 to $450^{\\circ} \\mathrm{F}$ & See figure 1-16 -46 to $232^{\\circ} \\mathrm{C}$ & Superior & Very long & Low \\\\\n\\hline ENVIRO-SEAL Duplex & 750 psig -50 to $450^{\\circ} \\mathrm{F}$ & 51.7 bar -46 to $232^{\\circ} \\mathrm{C}$ & See figure 1-16 -50 to $450^{\\circ} \\mathrm{F}$ & See figure 1-16 -46 to $232^{\\circ} \\mathrm{C}$ & Superior & Very long & Low \\\\\n\\hline KALREZ ${ }^{\\circledR}$ with PTFE (KVSP 400) ${ }^{(3)}$ & 350 psig 40 to $400^{\\circ} \\mathrm{F}$ & 24.1 bar 4 to 204 & See figure 1-16 -40 to $400^{\\circ} \\mathrm{F}$ & See figure 1-16 -40 to $204^{\\circ} \\mathrm{C}$ & Superior & Long & Low \\\\\n\\hline ENVIRO-SEAL Graphite ULF & 1500 psig 20 to $600^{\\circ} \\mathrm{F}$ & 103 bar -7 to $315^{\\circ} \\mathrm{C}$ & 3000 psig -325 to $700^{\\circ} \\mathrm{F}$ & 207 bar -198 to $371^{\\circ} \\mathrm{C}$ & Superior & Very long & High \\\\\n\\hline HIGH-SEAL Graphite with PTFE & 1500 psig 20 to $600^{\\circ} \\mathrm{F}$ & 103 bar -7 to $315^{\\circ} \\mathrm{C}$ & 4200 psig ${ }^{(4)}$ -325 to $700^{\\circ} \\mathrm{F}$ & 290 bar ${ }^{(4)}$ -198 to $317^{\\circ} \\mathrm{C}$ & Superior & Very long & High \\\\\n\\hline HIGH-SEAL Graphite & ------ & ------ & 4200 psig ${ }^{(4)}$ -325 to $1200^{\\circ} \\mathrm{F}^{(5)}$ & 290 bar ${ }^{(4)}$ -198 to $649^{\\circ} \\mathrm{C}(5)$ & Better & Very long & Very high \\\\\n\\hline Braided Graphite Filament & ---- - - & ---- - - & 1500 psig -325 to $1000^{\\circ} \\mathrm{F}^{(5)}$ & 103 bar -198 to $538^{\\circ} \\mathrm{C}(5)$ & Acceptable & Acceptable & High \\\\\n\\hline \\multicolumn{8}{|c|}{\\begin{tabular}{l}\n1. The values shown are only guidelines. These guidelines can be exceeded, but shortened packing life or increased leakage might result. The temperature ratings apply to the actual packing temperature, not to the process temperature. \\\\\n2. See Catalog 14 for actual friction values. \\\\\n3. The KALREZ pressure/temperature limits referenced in this bulletin are for Fisher Controls valve applications only. DuPont may claim higher limits. \\\\\n4. Except for the $3 / 8$-inch ( 9.5 mm ) stem, 1600 psig ( 110 bar ). \\\\\n5. Except for oxidizing service, -325 to $700^{\\circ} \\mathrm{F}\\left(-198\\right.$ to $\\left.371^{\\circ} \\mathrm{C}\\right)$.\n\\end{tabular}} \\\\\n\\hline\n\\end{tabular}\n\\end{table}",
+      "metadata": {
+        "chunk_id": "table_1_5",
+        "chunk_type": "table",
+        "section_title": "Packing Materials and Systems",
+        "section_path": [
+          "Chapter 1",
+          "Packing Materials and Systems"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 18,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 1832,
+          "width": 781,
+          "height": 41
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Packing Materials and Systems}\n\nThis section provides information and insight to help in selection of packing systems. Application guidelines for each packing selection have been developed to aid in the packing selection process. These guidelines were developed based on test results of various packing systems conducted in Fisher's technical center. Exceeding these guidelines may result in reduced service life.\n\nThe ratings for these systems do not affect the valve pressure/temperature class rating. Traditional valve selection entails selecting a valve design based on pressure and temperature capabilities, flow characteristics, and material compatibility. An additional factor-packing selection-is now a critical factor in the valve selection process.\n\nProper packing selection is being driven in the United States by the Clean Air Act Amendments, subsequent Environmental Protection Agency (EPA) regulations, and our customers' increasing concern for improved packing performance (less maintenance and longer service life.)\n\nIn recent years, packing selection has been primarily based on process temperature; that is, PTFE was selected for temperatures below $450^{\\circ} \\mathrm{F}$ ( $232^{\\circ} \\mathrm{C}$ ), and graphite was selected for temperatures above $450^{\\circ} \\mathrm{F}\\left(232^{\\circ} \\mathrm{C}\\right)$. Considerations now include the effect of packing friction on process control, hysteresis, seal quality, and cycle life.\n\nGiven the variety of process applications and installation conditions, these variables are difficult to quantify. A relative packing performance comparison can be made that provides an engineered approach to the packing selection process.\n\nClarification of trade names is required for proper understanding of the Table 1-5 shown in this publication. From the perspective of Fisher, ENVIROSEAL ${ }^{\\text {™ }}$ packing is defined as an advanced system using a \"compact\", live-load spring design. From a user perspective, ENVIRO-SEAL packing is most\ntypically thought of as an emission-reducing packing system; however, as shown in the following chart and graphs, it is highly useful in non-environmental applications as well.\n\nAlthough other packing materials and combinations of packing materials are available, the recommendations for nearly all applications are listed in Table 1-5. Simply select the appropriate packing based on pressure, temperature, leakage requirements, service life required, etc. Use the charts for additional guidance.\n\nThe packing selection guidelines in Table 1-5 present two categories of service conditions. The first category defines those packing systems designed for environmental or fugitive emission applications where 500 parts per million volume (ppmv) seal performance is required.\n\nThe second category defines application guidelines for non-environmental services. Depending on category requirements, different pressure/temperature guidelines have been established for the packing systems.\n\nIn addition, a given packing design has certain characteristics concerning seal performance, service life, and friction. The pressure and temperature guidelines and the relative comparison of these characteristics are defined in Table 1-5 and the supporting charts.\n\nKeep in mind that for non-environmental applications these are guidelines and are not intended as the ultimate limit. Exceeding the pressure guidelines for packing may be required; however, depending on how much the guidelines are exceeded, a reduction in total life span can be expected.\n\nWith flexible graphite packing this same logic applies to temperature. The recommended pressure I temperature limits for environmental applications using Fisher ENVIRO-SEAL packing cannot be exceeded without compromising sealing integrity.\n\n[Table table_1_5]\n\n",
+      "metadata": {
+        "chunk_id": "section_23",
+        "chunk_type": "section",
+        "section_title": "Packing Materials and Systems",
+        "section_path": [
+          "Chapter 1",
+          "Packing Materials and Systems"
+        ],
+        "entity_ids": [
+          "table_1_5"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\section*{Packing Set Possibilities}\n\n",
+      "metadata": {
+        "chunk_id": "section_24",
+        "chunk_type": "section",
+        "section_title": "Packing Set Possibilities",
+        "section_path": [
+          "Chapter 1",
+          "Packing Set Possibilities"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\section*{Single PTFE V-Ring Packing (Sliding-Stem and Rotary Valves)}\n\nThe single PTFE V-ring arrangement uses a coil spring, as in the easy-e ${ }^{\\text {TM }}$ valves, and meets the EPA 500 ppmv criteria, assuming that the pressure does not exceed 300 psig (20.7 bar) and the temperature is between $0^{\\circ} \\mathrm{F}$ and $200^{\\circ} \\mathrm{F}$ (-18 and $93^{\\circ} \\mathrm{C}$ ). This packing arrangement offers very good seal performance with the lowest packing friction and usually the lowest cost.\n\n",
+      "metadata": {
+        "chunk_id": "section_25",
+        "chunk_type": "section",
+        "section_title": "Single PTFE V-Ring Packing (Sliding-Stem and Rotary Valves)",
+        "section_path": [
+          "Chapter 1",
+          "Single PTFE V-Ring Packing (Sliding-Stem and Rotary Valves)"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 19,
+        "bbox": {
+          "top_left_x": 246,
+          "top_left_y": 1517,
+          "width": 749,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{ENVIRO-SEAL PTFE Packing (Sliding-Stem and Rotary Valves)}\n\nThe ENVIRO-SEAL PTFE arrangement is suitable for environmental applications on services up to 750 psig and $450^{\\circ} \\mathrm{F}$ ( 51.7 bar and $233^{\\circ} \\mathrm{C}$ ). The sealing capability is superior. The ENVIRO-SEAL PTFE packing system is designed to operate at a nearly constant high stress. This design approach results in an increase in stem friction. Typically, the slight increase in stem friction does not cause problems with actuator sizing or process control, such as hysteresis. It is always recommended that actuator sizing be verified whenever you select a different packing material.\n\n",
+      "metadata": {
+        "chunk_id": "section_26",
+        "chunk_type": "section",
+        "section_title": "ENVIRO-SEAL PTFE Packing (Sliding-Stem and Rotary Valves)",
+        "section_path": [
+          "Chapter 1",
+          "ENVIRO-SEAL PTFE Packing (Sliding-Stem and Rotary Valves)"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 19,
+        "bbox": {
+          "top_left_x": 246,
+          "top_left_y": 2043,
+          "width": 776,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Flexible Graphite Packing Material (Sliding-Stem Only)}\n\nIt is important to understand some of the issues associated with the base material that is common to all high temperature graphite packing systems. The single most important issue is the potential for galvanic corrosion in valves in storage that have graphite packing system installed.\n\nFisher uses only the highest grades of base flexible graphite material that contain a non-metallic, inorganic, passivating inhibitor for galvanic corrosion resistance. All Fisher graphite packing systems (with the exception of nuclear applications) also include sacrificial zinc washers to prevent galvanic corrosion.\n\nHowever, even with these preventive measures, under humid conditions, in the presence of chlorides, with air or oxygen present, there is potential for galvanic corrosion of the valve stem. Because there are numerous variables associated with galvanic corrosion it is near impossible to predict when it may occur.\n\nThe best policy is to remove the packing if the valve is to be stored for a long period. This, however, may create a safety issue if someone were to use the valve not realizing that there was no packing in the valve. For this exact reason all Fisher valves are supplied with the packing installed.\n\n",
+      "metadata": {
+        "chunk_id": "section_27",
+        "chunk_type": "section",
+        "section_title": "Flexible Graphite Packing Material (Sliding-Stem Only)",
+        "section_path": [
+          "Chapter 1",
+          "Flexible Graphite Packing Material (Sliding-Stem Only)"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 19,
+        "bbox": {
+          "top_left_x": 1154,
+          "top_left_y": 1382,
+          "width": 736,
+          "height": 41
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{ENVIRO-SEAL Graphite ULF (Sliding-Stem and Rotary Valves)}\n\nENVIRO-SEAL Graphite ULF packing is designed for environmental applications from 300 to $600^{\\circ} \\mathrm{F}$ ( 149 to $316^{\\circ} \\mathrm{C}$ ), or for those applications where fire safety is a concern and graphite packing is desired. The ENVIRO-SEAL Graphite ULF arrangement can also be used with higher pressures up to 1500 psig (103 bar) and still maintain the 500 ppmv EPA leakage criteria.\n\nENVIRO-SEAL Graphite ULF packing systems were developed by utilizing the benefits of both PTFE and graphite components. These special packing systems provide the firesafe capability of graphite packing along with reduced friction advantages of PTFE packing. Thus, ENVIRO-SEAL Graphite ULF packing systems provide a lower friction, lower emission, fire-tested solution for applications with process temperatures up to $316^{\\circ} \\mathrm{C}$ ( $600^{\\circ} \\mathrm{F}$ ). ENVIRO-SEAL Graphite ULF packing systems were tested in accordance with API Standard 589, \"Fire Test Evaluation of Valve Stem Packing\", second edition. See Figure 1-14 for applications guidelines for 500 ppm service. Figure 1-17 shows the ENVIRO-SEAL Graphite ULF packing system.\n\n",
+      "metadata": {
+        "chunk_id": "section_28",
+        "chunk_type": "section",
+        "section_title": "ENVIRO-SEAL Graphite ULF (Sliding-Stem and Rotary Valves)",
+        "section_path": [
+          "Chapter 1",
+          "ENVIRO-SEAL Graphite ULF (Sliding-Stem and Rotary Valves)"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 20,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 398,
+          "width": 768,
+          "height": 39
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{HIGH-SEAL ${ }^{\\text {™ }}$ Graphite with PTFE for Environmental Applications (Sliding-Stem Only)}\n\nThe HIGH-SEAL packing system features liveloading and unique packing ring arrangements for consistent, long-term sealing performance. It is offered without PTFE washers for nuclear service where PTFE is prohibited and with PTFE washers for all other applications.\n\nThe primary advantage of the HIGH-SEAL packing system arrangement is the use of large Belleville springs, which can be calibrated with a load scale. The load scale provides a visual indication of packing load, making it easier to determine when additional torque might be required.\n\nHIGH-SEAL packing systems have a disadvantage, from an installation perspective. This disadvantage is that the actuator cannot be removed from the valve without removing the Belleville springs.\n\nThe HIGH-SEAL graphite packing system provides a service life that is very long compared to other graphite packing arrangements.\n\n",
+      "metadata": {
+        "chunk_id": "section_29",
+        "chunk_type": "section",
+        "section_title": "HIGH-SEAL ${",
+        "section_path": [
+          "Chapter 1",
+          "HIGH-SEAL ${"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 20,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 1745,
+          "width": 719,
+          "height": 39
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Non-Environmental Services}\n\nFor the non-environmental pressure/temperature guidelines, using ENVIRO-SEAL and HIGH-SEAL packing systems can extend service life.\n\nAs service pressures and temperatures increase, the ENVIRO-SEAL packing systems provide a significant step change in performance, compared to the traditional single PTFE V-ring or braided graphite filament arrangements. For example, an ASME CL1500 (HP valve) application at 2000 psig and $200^{\\circ} \\mathrm{F}$ ( 137 bar and $93^{\\circ} \\mathrm{C}$ ) frequently required packing maintenance. The HIGH-SEAL packing system with PTFE washers was installed, significantly reducing maintenance requirements. This system is rated to 420 psig and $700^{\\circ} \\mathrm{F}$ (290 bar and $371^{\\circ} \\mathrm{C}$ ). The ENVIRO-SEAL packing system or compact Belleville spring arrangement is rated to 3000 psig and $700^{\\circ} \\mathrm{F}$ ( 20.7 bar and $371^{\\circ} \\mathrm{C}$ ).\n\nTable 1-5 shows that the braided graphite filament arrangement is limited to 1500 psig ( 103 bar). Due to its construction, braided graphite filament cannot sustain high packing stress levels. Over time, the braided graphite filament will break down and compress, and sealing force will be lost. Due to these characteristics, braided graphite filament will not provide the required seal performance for environmental services. The braided graphite filament arrangement is also susceptible to stick-slip action, which might cause process control deviations.\n\n",
+      "metadata": {
+        "chunk_id": "section_30",
+        "chunk_type": "section",
+        "section_title": "Non-Environmental Services",
+        "section_path": [
+          "Chapter 1",
+          "Non-Environmental Services"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 20,
+        "bbox": {
+          "top_left_x": 1154,
+          "top_left_y": 639,
+          "width": 757,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Rotary Valve Considerations}\n\nThe basic principles of sealing a rotary shaft are the same as sealing a sliding stem. However, experience shows that sealing the shaft on a rotary valve is less difficult than on sliding stem applications. The rotary motion does not tend to remove material from the packing box as does the sliding stem motion. Also, many of the rotary valve applications tend to be lower pressure applications than sliding stem valve services. As with sliding stem valves, the basic material recommendation for rotary valve packing is either PTFE or flexible graphite.\n\n",
+      "metadata": {
+        "chunk_id": "section_31",
+        "chunk_type": "section",
+        "section_title": "Rotary Valve Considerations",
+        "section_path": [
+          "Chapter 1",
+          "Rotary Valve Considerations"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 20,
+        "bbox": {
+          "top_left_x": 1154,
+          "top_left_y": 2043,
+          "width": 744,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Single Packing Arrangements}\n\nUsed in most applications for a durable, yet economical package.\n\n",
+      "metadata": {
+        "chunk_id": "section_32",
+        "chunk_type": "section",
+        "section_title": "Single Packing Arrangements",
+        "section_path": [
+          "Chapter 1",
+          "Single Packing Arrangements"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 21,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 341,
+          "width": 746,
+          "height": 47
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Double Packing Arrangements}\n\nWhere an especially tight seal is required, double packing is available. Consisting of two stacks of packing and a spacer, double packing arrangements have more packing on the actuator side if a lubricating connection is used.\n\n",
+      "metadata": {
+        "chunk_id": "section_33",
+        "chunk_type": "section",
+        "section_title": "Double Packing Arrangements",
+        "section_path": [
+          "Chapter 1",
+          "Double Packing Arrangements"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 21,
+        "bbox": {
+          "top_left_x": 246,
+          "top_left_y": 590,
+          "width": 766,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Leak-Off Packing Arrangements}\n\nCertain rotary valve applications require that any leakage from the inner set of packing be detected and channeled away before it can leak through the outer set to the atmosphere. Leak-off packing arrangements are designed for this purpose.\n\nSome standard packing arrangements, such as double PTFE V-ring, that have packing on either side of a lubricator connection can also be used for leak-off applications. However, standard packing arrangements are not specifically designed for leak-off applications and do not have a suitable ratio of packing on either side of the lubricator.\n\n",
+      "metadata": {
+        "chunk_id": "section_34",
+        "chunk_type": "section",
+        "section_title": "Leak-Off Packing Arrangements",
+        "section_path": [
+          "Chapter 1",
+          "Leak-Off Packing Arrangements"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 21,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 948,
+          "width": 752,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Purged Packing Arrangement}\n\nCertain rotary valve applications require that a lantern gland and a tapped pipe connection be provided inboard of the packing itself to permit purging of any accumulated deposits around the valve shaft and bushing. This arrangement is recommended for handling fluids with entrained solids and where fluids condense or solidify with loss of temperature.\n\n",
+      "metadata": {
+        "chunk_id": "section_35",
+        "chunk_type": "section",
+        "section_title": "Purged Packing Arrangement",
+        "section_path": [
+          "Chapter 1",
+          "Purged Packing Arrangement"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 21,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 948,
+          "width": 752,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Process Fluid Compatibility and Temperature Ranges}\n\nFisher's published literature lists packing types that are used with various process fluids. However, some process fluids may not be compatible with the packing throughout the entire temperature range. If in doubt about the compatibility of Fisher's packing material with a process fluid of a specific concentration and temperature, consult your Fisher Representative sales office.\n\nPublished temperature ranges refer to temperatures in the packing box. When using any packing at low temperatures, frost allowed to form on the shaft can damage the packing. For a given process temperature, the packing box temperature depends on several factors. Contact the Fisher sales representative for information on packing box temperatures.\n\n",
+      "metadata": {
+        "chunk_id": "section_36",
+        "chunk_type": "section",
+        "section_title": "Process Fluid Compatibility and Temperature Ranges",
+        "section_path": [
+          "Chapter 1",
+          "Process Fluid Compatibility and Temperature Ranges"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 21,
+        "bbox": {
+          "top_left_x": 1154,
+          "top_left_y": 406,
+          "width": 722,
+          "height": 42
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-022.jpg?height=985&width=1460&top_left_y=265&top_left_x=357}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-13. Application Guidelines Chart for 500 PPM Service}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_13",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 22,
+        "bbox": {
+          "top_left_x": 357,
+          "top_left_y": 265,
+          "width": 1460,
+          "height": 985
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-022.jpg?height=1026&width=1584&top_left_y=1352&top_left_x=249}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-14. Application Guidelines Chart for Non-Environmental Service}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_14",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 22,
+        "bbox": {
+          "top_left_x": 249,
+          "top_left_y": 1352,
+          "width": 1584,
+          "height": 1026
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-023.jpg?height=1708&width=1706&top_left_y=271&top_left_x=241}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-15. Typical Packing Examples for Sliding-Stem Valves}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_15",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 23,
+        "bbox": {
+          "top_left_x": 241,
+          "top_left_y": 271,
+          "width": 1706,
+          "height": 1708
+        }
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-024.jpg?height=1895&width=1714&top_left_y=268&top_left_x=241}\n\\captionsetup{labelformat=empty}\n\\caption{NOTE: LEAD-OFF TAPPING AND PIPE PLUG ARE OPTIONAL}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_37_3",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd"
+      }
+    },
+    {
+      "page_content": "\\begin{figure}\n\\includegraphics[width=\\textwidth]{https://cdn.mathpix.com/cropped/2025_08_28_f30f0bb3b7b14bdf7722g-025.jpg?height=837&width=1690&top_left_y=281&top_left_x=266}\n\\captionsetup{labelformat=empty}\n\\caption{Figure 1-17. Typical ENVIRO-SEAL Packing Arrangements for Rotary Valves}\n\\end{figure}",
+      "metadata": {
+        "chunk_id": "figure_1_17",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "source": "manual_chapter1.mmd",
+        "page": 25,
+        "bbox": {
+          "top_left_x": 266,
+          "top_left_y": 281,
+          "width": 1690,
+          "height": 837
+        }
+      }
+    },
+    {
+      "page_content": "\\section*{Conclusion}\n\nIt is important to recognize that many parameters affect seal performance and service life. Even if the optimum design is selected, other factors such as stem finish, packing bore finish, and installation practices will have an effect on performance.\n\nThe knowledge gained by Fisher as a result of the ENVIRO-SEAL and HIGH-SEAL packing development program has provided an opportunity to help you \"engineer\" the packing selection. Proper selection has a bottom line result; that is, increased service life and reduced maintenance.\n\nIf you need a more detailed engineering discussion of the design principles affecting packing seal design, contact your Fisher sales office or sales representative.\n\n[Figure figure_1_13]\n\n[Figure figure_1_14]\n\n[Figure figure_1_15]\n\n[Figure figure_37_3]\n\nFigure 1-16. Typical Packing Examples for Sliding-Stem Valves\n\n[Figure figure_1_17]",
+      "metadata": {
+        "chunk_id": "section_37",
+        "chunk_type": "section",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [
+          "figure_1_13",
+          "figure_1_14",
+          "figure_1_15",
+          "figure_37_3",
+          "figure_1_17"
+        ],
+        "source": "manual_chapter1.mmd"
+      }
+    }
+  ],
+  "created_at": "2025-09-01T18:41:29.407263",
+  "total_chunks": 59,
+  "entity_registry": {
+    "entities": {
+      "section_0": {
+        "chunk_id": "section_0",
+        "chunk_type": "section",
+        "section_title": "Section 1:",
+        "section_path": [
+          "Section 1:"
+        ],
+        "entity_ids": [],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_1": {
+        "chunk_id": "section_1",
+        "chunk_type": "section",
+        "section_title": "Control Valve Sizing and Selection",
+        "section_path": [
+          "Section 1:",
+          "Control Valve Sizing and Selection"
+        ],
+        "entity_ids": [],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_2": {
+        "chunk_id": "section_2",
+        "chunk_type": "section",
+        "section_title": "Chapter 1",
+        "section_path": [
+          "Chapter 1"
+        ],
+        "entity_ids": [],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_3": {
+        "chunk_id": "section_3",
+        "chunk_type": "section",
+        "section_title": "Control Valve Selection",
+        "section_path": [
+          "Chapter 1",
+          "Control Valve Selection"
+        ],
+        "entity_ids": [],
+        "page_number": 7,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_1": {
+        "chunk_id": "figure_1_1",
+        "chunk_type": "image",
+        "section_title": "General Categories of Control Valves",
+        "section_path": [
+          "Chapter 1",
+          "General Categories of Control Valves"
+        ],
+        "entity_ids": [],
+        "page_number": 7,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_2": {
+        "chunk_id": "figure_1_2",
+        "chunk_type": "image",
+        "section_title": "General Categories of Control Valves",
+        "section_path": [
+          "Chapter 1",
+          "General Categories of Control Valves"
+        ],
+        "entity_ids": [],
+        "page_number": 8,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_3": {
+        "chunk_id": "figure_1_3",
+        "chunk_type": "image",
+        "section_title": "General Categories of Control Valves",
+        "section_path": [
+          "Chapter 1",
+          "General Categories of Control Valves"
+        ],
+        "entity_ids": [],
+        "page_number": 8,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_4": {
+        "chunk_id": "section_4",
+        "chunk_type": "section",
+        "section_title": "General Categories of Control Valves",
+        "section_path": [
+          "Chapter 1",
+          "General Categories of Control Valves"
+        ],
+        "entity_ids": [
+          "figure_1_1",
+          "figure_1_2",
+          "figure_1_3"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_4": {
+        "chunk_id": "figure_1_4",
+        "chunk_type": "image",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [],
+        "page_number": 9,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_5": {
+        "chunk_id": "figure_1_5",
+        "chunk_type": "image",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [],
+        "page_number": 9,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_6": {
+        "chunk_id": "figure_1_6",
+        "chunk_type": "image",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [],
+        "page_number": 10,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_7": {
+        "chunk_id": "figure_1_7",
+        "chunk_type": "image",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [],
+        "page_number": 10,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_5": {
+        "chunk_id": "section_5",
+        "chunk_type": "section",
+        "section_title": "Sliding-Stem Valves",
+        "section_path": [
+          "Chapter 1",
+          "Sliding-Stem Valves"
+        ],
+        "entity_ids": [
+          "figure_1_4",
+          "figure_1_5",
+          "figure_1_6",
+          "figure_1_7"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_8": {
+        "chunk_id": "figure_1_8",
+        "chunk_type": "image",
+        "section_title": "Ball Valves",
+        "section_path": [
+          "Chapter 1",
+          "Ball Valves"
+        ],
+        "entity_ids": [],
+        "page_number": 11,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_6": {
+        "chunk_id": "section_6",
+        "chunk_type": "section",
+        "section_title": "Ball Valves",
+        "section_path": [
+          "Chapter 1",
+          "Ball Valves"
+        ],
+        "entity_ids": [
+          "figure_1_8"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_9": {
+        "chunk_id": "figure_1_9",
+        "chunk_type": "image",
+        "section_title": "Eccentric Plug Valves",
+        "section_path": [
+          "Chapter 1",
+          "Eccentric Plug Valves"
+        ],
+        "entity_ids": [],
+        "page_number": 12,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_7": {
+        "chunk_id": "section_7",
+        "chunk_type": "section",
+        "section_title": "Eccentric Plug Valves",
+        "section_path": [
+          "Chapter 1",
+          "Eccentric Plug Valves"
+        ],
+        "entity_ids": [
+          "figure_1_9"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_8": {
+        "chunk_id": "section_8",
+        "chunk_type": "section",
+        "section_title": "General Selection Criteria",
+        "section_path": [
+          "Chapter 1",
+          "General Selection Criteria"
+        ],
+        "entity_ids": [],
+        "page_number": 12,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "table_1_1": {
+        "chunk_id": "table_1_1",
+        "chunk_type": "table",
+        "section_title": "Pressure Ratings",
+        "section_path": [
+          "Chapter 1",
+          "Pressure Ratings"
+        ],
+        "entity_ids": [],
+        "page_number": 12,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_9": {
+        "chunk_id": "section_9",
+        "chunk_type": "section",
+        "section_title": "Pressure Ratings",
+        "section_path": [
+          "Chapter 1",
+          "Pressure Ratings"
+        ],
+        "entity_ids": [
+          "table_1_1"
+        ],
+        "page_number": 12,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_10": {
+        "chunk_id": "section_10",
+        "chunk_type": "section",
+        "section_title": "Temperature Considerations",
+        "section_path": [
+          "Chapter 1",
+          "Temperature Considerations"
+        ],
+        "entity_ids": [],
+        "page_number": 12,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_11": {
+        "chunk_id": "section_11",
+        "chunk_type": "section",
+        "section_title": "Material Selection",
+        "section_path": [
+          "Chapter 1",
+          "Material Selection"
+        ],
+        "entity_ids": [],
+        "page_number": 13,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_10": {
+        "chunk_id": "figure_1_10",
+        "chunk_type": "image",
+        "section_title": "Flow Characteristic",
+        "section_path": [
+          "Chapter 1",
+          "Flow Characteristic"
+        ],
+        "entity_ids": [],
+        "page_number": 13,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_12": {
+        "chunk_id": "section_12",
+        "chunk_type": "section",
+        "section_title": "Flow Characteristic",
+        "section_path": [
+          "Chapter 1",
+          "Flow Characteristic"
+        ],
+        "entity_ids": [
+          "figure_1_10"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_13": {
+        "chunk_id": "section_13",
+        "chunk_type": "section",
+        "section_title": "Rangeability",
+        "section_path": [
+          "Chapter 1",
+          "Rangeability"
+        ],
+        "entity_ids": [],
+        "page_number": 14,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_14": {
+        "chunk_id": "section_14",
+        "chunk_type": "section",
+        "section_title": "Use of Positioners",
+        "section_path": [
+          "Chapter 1",
+          "Use of Positioners"
+        ],
+        "entity_ids": [],
+        "page_number": 14,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_15": {
+        "chunk_id": "section_15",
+        "chunk_type": "section",
+        "section_title": "Pressure Drop",
+        "section_path": [
+          "Chapter 1",
+          "Pressure Drop"
+        ],
+        "entity_ids": [],
+        "page_number": 14,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_16": {
+        "chunk_id": "section_16",
+        "chunk_type": "section",
+        "section_title": "Noise and Cavitation",
+        "section_path": [
+          "Chapter 1",
+          "Noise and Cavitation"
+        ],
+        "entity_ids": [],
+        "page_number": 14,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_12": {
+        "chunk_id": "figure_1_12",
+        "chunk_type": "image",
+        "section_title": "End Connections",
+        "section_path": [
+          "Chapter 1",
+          "End Connections"
+        ],
+        "entity_ids": [],
+        "page_number": 15,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_17": {
+        "chunk_id": "section_17",
+        "chunk_type": "section",
+        "section_title": "End Connections",
+        "section_path": [
+          "Chapter 1",
+          "End Connections"
+        ],
+        "entity_ids": [
+          "figure_1_12"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_18": {
+        "chunk_id": "section_18",
+        "chunk_type": "section",
+        "section_title": "Shutoff Capability",
+        "section_path": [
+          "Chapter 1",
+          "Shutoff Capability"
+        ],
+        "entity_ids": [],
+        "page_number": 15,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_19": {
+        "chunk_id": "section_19",
+        "chunk_type": "section",
+        "section_title": "Flow Capacity",
+        "section_path": [
+          "Chapter 1",
+          "Flow Capacity"
+        ],
+        "entity_ids": [],
+        "page_number": 15,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "table_1_2": {
+        "chunk_id": "table_1_2",
+        "chunk_type": "table",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "page_number": 16,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "table_1_3": {
+        "chunk_id": "table_1_3",
+        "chunk_type": "table",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "page_number": 17,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_20": {
+        "chunk_id": "section_20",
+        "chunk_type": "section",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [
+          "table_1_2",
+          "table_1_3"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_21": {
+        "chunk_id": "section_21",
+        "chunk_type": "section",
+        "section_title": "Pressure Control Systems",
+        "section_path": [
+          "Chapter 1",
+          "Pressure Control Systems"
+        ],
+        "entity_ids": [],
+        "page_number": 17,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "table_1_4": {
+        "chunk_id": "table_1_4",
+        "chunk_type": "table",
+        "section_title": "Flow Control Processes",
+        "section_path": [
+          "Chapter 1",
+          "Flow Control Processes"
+        ],
+        "entity_ids": [],
+        "page_number": 17,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_22": {
+        "chunk_id": "section_22",
+        "chunk_type": "section",
+        "section_title": "Flow Control Processes",
+        "section_path": [
+          "Chapter 1",
+          "Flow Control Processes"
+        ],
+        "entity_ids": [
+          "table_1_4"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "table_1_5": {
+        "chunk_id": "table_1_5",
+        "chunk_type": "table",
+        "section_title": "Packing Materials and Systems",
+        "section_path": [
+          "Chapter 1",
+          "Packing Materials and Systems"
+        ],
+        "entity_ids": [],
+        "page_number": 18,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_23": {
+        "chunk_id": "section_23",
+        "chunk_type": "section",
+        "section_title": "Packing Materials and Systems",
+        "section_path": [
+          "Chapter 1",
+          "Packing Materials and Systems"
+        ],
+        "entity_ids": [
+          "table_1_5"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_24": {
+        "chunk_id": "section_24",
+        "chunk_type": "section",
+        "section_title": "Packing Set Possibilities",
+        "section_path": [
+          "Chapter 1",
+          "Packing Set Possibilities"
+        ],
+        "entity_ids": [],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_25": {
+        "chunk_id": "section_25",
+        "chunk_type": "section",
+        "section_title": "Single PTFE V-Ring Packing (Sliding-Stem and Rotary Valves)",
+        "section_path": [
+          "Chapter 1",
+          "Single PTFE V-Ring Packing (Sliding-Stem and Rotary Valves)"
+        ],
+        "entity_ids": [],
+        "page_number": 19,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_26": {
+        "chunk_id": "section_26",
+        "chunk_type": "section",
+        "section_title": "ENVIRO-SEAL PTFE Packing (Sliding-Stem and Rotary Valves)",
+        "section_path": [
+          "Chapter 1",
+          "ENVIRO-SEAL PTFE Packing (Sliding-Stem and Rotary Valves)"
+        ],
+        "entity_ids": [],
+        "page_number": 19,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_27": {
+        "chunk_id": "section_27",
+        "chunk_type": "section",
+        "section_title": "Flexible Graphite Packing Material (Sliding-Stem Only)",
+        "section_path": [
+          "Chapter 1",
+          "Flexible Graphite Packing Material (Sliding-Stem Only)"
+        ],
+        "entity_ids": [],
+        "page_number": 19,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_28": {
+        "chunk_id": "section_28",
+        "chunk_type": "section",
+        "section_title": "ENVIRO-SEAL Graphite ULF (Sliding-Stem and Rotary Valves)",
+        "section_path": [
+          "Chapter 1",
+          "ENVIRO-SEAL Graphite ULF (Sliding-Stem and Rotary Valves)"
+        ],
+        "entity_ids": [],
+        "page_number": 20,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_29": {
+        "chunk_id": "section_29",
+        "chunk_type": "section",
+        "section_title": "HIGH-SEAL ${",
+        "section_path": [
+          "Chapter 1",
+          "HIGH-SEAL ${"
+        ],
+        "entity_ids": [],
+        "page_number": 20,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_30": {
+        "chunk_id": "section_30",
+        "chunk_type": "section",
+        "section_title": "Non-Environmental Services",
+        "section_path": [
+          "Chapter 1",
+          "Non-Environmental Services"
+        ],
+        "entity_ids": [],
+        "page_number": 20,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_31": {
+        "chunk_id": "section_31",
+        "chunk_type": "section",
+        "section_title": "Rotary Valve Considerations",
+        "section_path": [
+          "Chapter 1",
+          "Rotary Valve Considerations"
+        ],
+        "entity_ids": [],
+        "page_number": 20,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_32": {
+        "chunk_id": "section_32",
+        "chunk_type": "section",
+        "section_title": "Single Packing Arrangements",
+        "section_path": [
+          "Chapter 1",
+          "Single Packing Arrangements"
+        ],
+        "entity_ids": [],
+        "page_number": 21,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_33": {
+        "chunk_id": "section_33",
+        "chunk_type": "section",
+        "section_title": "Double Packing Arrangements",
+        "section_path": [
+          "Chapter 1",
+          "Double Packing Arrangements"
+        ],
+        "entity_ids": [],
+        "page_number": 21,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_34": {
+        "chunk_id": "section_34",
+        "chunk_type": "section",
+        "section_title": "Leak-Off Packing Arrangements",
+        "section_path": [
+          "Chapter 1",
+          "Leak-Off Packing Arrangements"
+        ],
+        "entity_ids": [],
+        "page_number": 21,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_35": {
+        "chunk_id": "section_35",
+        "chunk_type": "section",
+        "section_title": "Purged Packing Arrangement",
+        "section_path": [
+          "Chapter 1",
+          "Purged Packing Arrangement"
+        ],
+        "entity_ids": [],
+        "page_number": 21,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_36": {
+        "chunk_id": "section_36",
+        "chunk_type": "section",
+        "section_title": "Process Fluid Compatibility and Temperature Ranges",
+        "section_path": [
+          "Chapter 1",
+          "Process Fluid Compatibility and Temperature Ranges"
+        ],
+        "entity_ids": [],
+        "page_number": 21,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_13": {
+        "chunk_id": "figure_1_13",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "page_number": 22,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_14": {
+        "chunk_id": "figure_1_14",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "page_number": 22,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_15": {
+        "chunk_id": "figure_1_15",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "page_number": 23,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_37_3": {
+        "chunk_id": "figure_37_3",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "figure_1_17": {
+        "chunk_id": "figure_1_17",
+        "chunk_type": "image",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [],
+        "page_number": 25,
+        "line_numbers": [
+          0,
+          0
+        ]
+      },
+      "section_37": {
+        "chunk_id": "section_37",
+        "chunk_type": "section",
+        "section_title": "Conclusion",
+        "section_path": [
+          "Chapter 1",
+          "Conclusion"
+        ],
+        "entity_ids": [
+          "figure_1_13",
+          "figure_1_14",
+          "figure_1_15",
+          "figure_37_3",
+          "figure_1_17"
+        ],
+        "page_number": 1,
+        "line_numbers": [
+          0,
+          0
+        ]
+      }
+    },
+    "section_entities": {
+      "section_0": [],
+      "section_1": [],
+      "section_2": [],
+      "section_3": [],
+      "section_4": [
+        "figure_1_1",
+        "figure_1_2",
+        "figure_1_3"
+      ],
+      "section_5": [
+        "figure_1_4",
+        "figure_1_5",
+        "figure_1_6",
+        "figure_1_7"
+      ],
+      "section_6": [
+        "figure_1_8"
+      ],
+      "section_7": [
+        "figure_1_9"
+      ],
+      "section_8": [],
+      "section_9": [
+        "table_1_1"
+      ],
+      "section_10": [],
+      "section_11": [],
+      "section_12": [
+        "figure_1_10"
+      ],
+      "section_13": [],
+      "section_14": [],
+      "section_15": [],
+      "section_16": [],
+      "section_17": [
+        "figure_1_12"
+      ],
+      "section_18": [],
+      "section_19": [],
+      "section_20": [
+        "table_1_2",
+        "table_1_3"
+      ],
+      "section_21": [],
+      "section_22": [
+        "table_1_4"
+      ],
+      "section_23": [
+        "table_1_5"
+      ],
+      "section_24": [],
+      "section_25": [],
+      "section_26": [],
+      "section_27": [],
+      "section_28": [],
+      "section_29": [],
+      "section_30": [],
+      "section_31": [],
+      "section_32": [],
+      "section_33": [],
+      "section_34": [],
+      "section_35": [],
+      "section_36": [],
+      "section_37": [
+        "figure_1_13",
+        "figure_1_14",
+        "figure_1_15",
+        "figure_37_3",
+        "figure_1_17"
+      ]
+    }
+  }
+}

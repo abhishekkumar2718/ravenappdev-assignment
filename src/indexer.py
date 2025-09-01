@@ -19,6 +19,7 @@ from langchain.text_splitter import MarkdownTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.schema import Document
+from .models import ChunkType, ChunkMetadata, EntityRegistry
 
 load_dotenv()
 
@@ -160,6 +161,227 @@ class DocumentLocationMapper:
         return None
 
 
+class SectionEntityChunker:
+    """Chunks documents into sections, tables, and images with entity relationships."""
+    
+    def __init__(self, location_mapper: Optional[DocumentLocationMapper] = None):
+        """
+        Initialize the chunker with optional location mapper.
+        
+        Args:
+            location_mapper: DocumentLocationMapper for page/bbox information
+        """
+        self.location_mapper = location_mapper
+        self.entity_registry = EntityRegistry()
+        self.current_section_path = []
+        self.current_section_id = None
+        
+    def chunk_document(self, text: str, source_file: str = "manual.mmd") -> List[Document]:
+        """
+        Chunk document into sections, tables, and images.
+        
+        Args:
+            text: The document text to chunk
+            source_file: Name of the source file
+            
+        Returns:
+            List of Document objects with entity-aware metadata
+        """
+        documents = []
+        
+        # Reset location mapper if available
+        if self.location_mapper:
+            self.location_mapper.reset_position()
+        
+        # Split by sections
+        sections = self._split_sections(text)
+        
+        for section_idx, section_content in enumerate(sections):
+            # Extract section title and update path
+            section_title = self._extract_section_title(section_content)
+            self._update_section_path(section_title)
+            
+            # Generate section ID
+            section_id = f"section_{section_idx}"
+            self.current_section_id = section_id
+            
+            # Extract tables and figures from section
+            tables = self._extract_tables(section_content)
+            figures = self._extract_figures(section_content)
+            
+            # Create entity IDs
+            table_ids = []
+            figure_ids = []
+            
+            # Process tables
+            for table_idx, (table_content, table_id_match) in enumerate(tables):
+                table_id = table_id_match if table_id_match else f"table_{section_idx}_{table_idx}"
+                table_ids.append(table_id)
+                
+                # Create table document
+                table_doc = self._create_entity_document(
+                    content=table_content,
+                    chunk_id=table_id,
+                    chunk_type=ChunkType.TABLE,
+                    section_title=section_title,
+                    source_file=source_file
+                )
+                documents.append(table_doc)
+                
+                # Remove table from section content
+                section_content = section_content.replace(table_content, f"[Table {table_id}]")
+            
+            # Process figures
+            for fig_idx, (figure_content, figure_id_match) in enumerate(figures):
+                figure_id = figure_id_match if figure_id_match else f"figure_{section_idx}_{fig_idx}"
+                figure_ids.append(figure_id)
+                
+                # Create figure document
+                figure_doc = self._create_entity_document(
+                    content=figure_content,
+                    chunk_id=figure_id,
+                    chunk_type=ChunkType.IMAGE,
+                    section_title=section_title,
+                    source_file=source_file
+                )
+                documents.append(figure_doc)
+                
+                # Remove figure from section content
+                section_content = section_content.replace(figure_content, f"[Figure {figure_id}]")
+            
+            # Create section document with entity references
+            section_doc = self._create_entity_document(
+                content=section_content,
+                chunk_id=section_id,
+                chunk_type=ChunkType.SECTION,
+                section_title=section_title,
+                source_file=source_file,
+                entity_ids=table_ids + figure_ids
+            )
+            documents.append(section_doc)
+            
+            # Update entity registry
+            self.entity_registry.section_entities[section_id] = table_ids + figure_ids
+        
+        return documents
+    
+    def _split_sections(self, text: str) -> List[str]:
+        """Split text by section markers."""
+        # Split by \section* markers
+        sections = re.split(r'\\section\*\{', text)
+        
+        # Process each section
+        processed_sections = []
+        for section in sections:
+            if section.strip():
+                # Add back the section marker if it was removed
+                if not section.startswith('\\section*{'):
+                    section = '\\section*{' + section
+                processed_sections.append(section)
+        
+        return processed_sections if processed_sections else [text]
+    
+    def _extract_section_title(self, section_content: str) -> str:
+        """Extract section title from content."""
+        match = re.match(r'\\section\*\{([^}]+)\}', section_content)
+        if match:
+            return match.group(1).strip()
+        return "Untitled Section"
+    
+    def _update_section_path(self, section_title: str) -> None:
+        """Update the hierarchical section path."""
+        # Simple heuristic: Chapter resets path, other sections append
+        if "Chapter" in section_title:
+            self.current_section_path = [section_title]
+        else:
+            # Keep only top 2 levels for simplicity
+            if len(self.current_section_path) >= 2:
+                self.current_section_path = [self.current_section_path[0], section_title]
+            else:
+                self.current_section_path.append(section_title)
+    
+    def _extract_tables(self, content: str) -> List[Tuple[str, Optional[str]]]:
+        """Extract tables from content. Returns list of (table_content, table_id)."""
+        tables = []
+        
+        # Find all tables
+        table_pattern = r'\\begin\{table\}.*?\\end\{table\}'
+        table_matches = re.finditer(table_pattern, content, re.DOTALL)
+        
+        for match in table_matches:
+            table_content = match.group(0)
+            
+            # Try to extract table ID from caption
+            caption_match = re.search(r'Table (\d+-\d+)', table_content)
+            table_id = f"table_{caption_match.group(1).replace('-', '_')}" if caption_match else None
+            
+            tables.append((table_content, table_id))
+        
+        return tables
+    
+    def _extract_figures(self, content: str) -> List[Tuple[str, Optional[str]]]:
+        """Extract figures from content. Returns list of (figure_content, figure_id)."""
+        figures = []
+        
+        # Find all figures
+        figure_pattern = r'\\begin\{figure\}.*?\\end\{figure\}'
+        figure_matches = re.finditer(figure_pattern, content, re.DOTALL)
+        
+        for match in figure_matches:
+            figure_content = match.group(0)
+            
+            # Try to extract figure ID from caption
+            caption_match = re.search(r'Figure (\d+-\d+)', figure_content)
+            figure_id = f"figure_{caption_match.group(1).replace('-', '_')}" if caption_match else None
+            
+            figures.append((figure_content, figure_id))
+        
+        return figures
+    
+    def _create_entity_document(self, content: str, chunk_id: str, chunk_type: ChunkType,
+                              section_title: str, source_file: str,
+                              entity_ids: List[str] = None) -> Document:
+        """Create a Document with entity-aware metadata."""
+        # Get location information if mapper available
+        location_info = {}
+        if self.location_mapper:
+            location = self.location_mapper.find_location(content)
+            if location:
+                location_info = {
+                    "page": location["page"],
+                    "bbox": location["bbox"]
+                }
+        
+        # Create metadata
+        metadata = {
+            "chunk_id": chunk_id,
+            "chunk_type": chunk_type.value,
+            "section_title": section_title,
+            "section_path": self.current_section_path.copy(),
+            "entity_ids": entity_ids or [],
+            "source": source_file,
+            **location_info
+        }
+        
+        # Store in entity registry
+        chunk_metadata = ChunkMetadata(
+            chunk_id=chunk_id,
+            chunk_type=chunk_type,
+            section_title=section_title,
+            section_path=self.current_section_path.copy(),
+            entity_ids=entity_ids or [],
+            page_number=location_info.get("page", 1),
+            line_numbers=(0, 0)  # Would need to enhance location mapper for this
+        )
+        self.entity_registry.entities[chunk_id] = chunk_metadata
+        
+        return Document(page_content=content, metadata=metadata)
+    
+    def get_entity_registry(self) -> EntityRegistry:
+        """Return the entity registry."""
+        return self.entity_registry
+
+
 class Indexer:
     """Indexes markdown documents for semantic search using FAISS and Gemini embeddings."""
     
@@ -188,6 +410,9 @@ class Indexer:
                 mmd_lines_data = json.load(f)
                 self.location_mapper = DocumentLocationMapper(mmd_lines_data)
         
+        # Initialize entity registry
+        self.entity_registry = None
+        
     def load_markdown(self, file_path: str) -> str:
         """
         Load markdown content from file.
@@ -201,52 +426,63 @@ class Indexer:
         with open(file_path, 'r', encoding='utf-8') as f:
             return f.read()
     
-    def create_chunks(self, text: str, source_file: str = "manual_chapter1.mmd", chunk_size: int = 1000, chunk_overlap: int = 200) -> List[Document]:
+    def create_chunks(self, text: str, source_file: str = "manual_chapter1.mmd", chunk_size: int = 1000, chunk_overlap: int = 200, use_entity_chunking: bool = True) -> List[Document]:
         """
-        Split markdown text into chunks using markdown-aware splitting.
+        Split markdown text into chunks using entity-aware or markdown-aware splitting.
         
         Args:
             text: Markdown text to split
             source_file: Name of the source file
-            chunk_size: Target size of each chunk in characters
-            chunk_overlap: Number of characters to overlap between chunks
+            chunk_size: Target size of each chunk in characters (for old method)
+            chunk_overlap: Number of characters to overlap between chunks (for old method)
+            use_entity_chunking: Whether to use new entity-aware chunking
             
         Returns:
             List of Document objects containing chunks
         """
-        # Use markdown text splitter for better markdown structure preservation
-        splitter = MarkdownTextSplitter()
-        
-        chunks = splitter.split_text(text)
-        
-        # Reset location mapper position for new chunking session
-        if self.location_mapper:
-            self.location_mapper.reset_position()
-        
-        # Create Document objects with metadata
-        documents = []
-        for i, chunk in enumerate(chunks):
-            metadata = {
-                "chunk_index": i,
-                "source": source_file,
-                "total_chunks": len(chunks),
-                "chunk_size": len(chunk)
-            }
+        if use_entity_chunking:
+            # Use new section-entity chunker
+            chunker = SectionEntityChunker(location_mapper=self.location_mapper)
+            documents = chunker.chunk_document(text, source_file)
             
-            # Add location information if mapper is available
+            # Save entity registry for later use
+            self.entity_registry = chunker.get_entity_registry()
+            
+            return documents
+        else:
+            # Use old markdown text splitter for backward compatibility
+            splitter = MarkdownTextSplitter()
+            
+            chunks = splitter.split_text(text)
+            
+            # Reset location mapper position for new chunking session
             if self.location_mapper:
-                location = self.location_mapper.find_location(chunk)
-                if location:
-                    metadata["page"] = location["page"]
-                    metadata["bbox"] = location["bbox"]
+                self.location_mapper.reset_position()
             
-            doc = Document(
-                page_content=chunk,
-                metadata=metadata
-            )
-            documents.append(doc)
-        
-        return documents
+            # Create Document objects with metadata
+            documents = []
+            for i, chunk in enumerate(chunks):
+                metadata = {
+                    "chunk_index": i,
+                    "source": source_file,
+                    "total_chunks": len(chunks),
+                    "chunk_size": len(chunk)
+                }
+                
+                # Add location information if mapper is available
+                if self.location_mapper:
+                    location = self.location_mapper.find_location(chunk)
+                    if location:
+                        metadata["page"] = location["page"]
+                        metadata["bbox"] = location["bbox"]
+                
+                doc = Document(
+                    page_content=chunk,
+                    metadata=metadata
+                )
+                documents.append(doc)
+            
+            return documents
     
     def save_chunks(self, documents: List[Document], output_path: str) -> None:
         """
@@ -267,6 +503,13 @@ class Indexer:
             "created_at": datetime.now().isoformat(),
             "total_chunks": len(documents)
         }
+        
+        # Add entity registry if available
+        if self.entity_registry:
+            chunks_data["entity_registry"] = {
+                "entities": {k: v.model_dump() for k, v in self.entity_registry.entities.items()},
+                "section_entities": self.entity_registry.section_entities
+            }
         
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(chunks_data, f, indent=2, ensure_ascii=False)
@@ -297,6 +540,19 @@ class Indexer:
                 )
                 for doc_data in chunks_data["documents"]
             ]
+            
+            # Load entity registry if available
+            if "entity_registry" in chunks_data:
+                registry_data = chunks_data["entity_registry"]
+                self.entity_registry = EntityRegistry()
+                
+                # Reconstruct entities
+                for entity_id, entity_dict in registry_data["entities"].items():
+                    chunk_metadata = ChunkMetadata(**entity_dict)
+                    self.entity_registry.entities[entity_id] = chunk_metadata
+                
+                # Reconstruct section_entities
+                self.entity_registry.section_entities = registry_data["section_entities"]
             
             print(f"Loaded {len(documents)} chunks from: {chunks_path}")
             return documents
@@ -437,6 +693,14 @@ class Indexer:
                     print(f"Page: {doc.metadata['page']}")
                     bbox = doc.metadata.get('bbox', {})
                     print(f"Bounding Box: x={bbox.get('top_left_x')}, y={bbox.get('top_left_y')}, w={bbox.get('width')}, h={bbox.get('height')}")
+                
+                # Show chunk type if available
+                if 'chunk_type' in doc.metadata:
+                    print(f"Chunk Type: {doc.metadata['chunk_type']}")
+                if 'section_path' in doc.metadata:
+                    print(f"Section Path: {' > '.join(doc.metadata['section_path'])}")
+                if 'entity_ids' in doc.metadata and doc.metadata['entity_ids']:
+                    print(f"Referenced Entities: {', '.join(doc.metadata['entity_ids'])}")
                 
                 # Show first 500 characters of content
                 preview_text = doc.page_content[:500] + "..." if len(doc.page_content) > 500 else doc.page_content
