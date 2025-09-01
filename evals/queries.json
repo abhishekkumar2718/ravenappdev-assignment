@@ -1,0 +1,249 @@
+{
+  "queries": [
+    {
+      "id": "table_001",
+      "query": "Show me the comparison of actuator types",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "table_002",
+      "query": "Can you pull up the table with valve categories and their characteristics?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "table_003",
+      "query": "I need the control valve characteristic recommendations table",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "table_004",
+      "query": "Where's the shutoff leakage standards comparison?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "table_005",
+      "query": "Display the packing selection guidelines table for sliding-stem valves",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "table_006",
+      "query": "What's in Table 1-4 about valve leakage?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "table_007",
+      "query": "Give me the flow control process characteristics table",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "table_008",
+      "query": "Present the pressure control systems recommendations",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "table_009",
+      "query": "Fetch the criteria checklist for valve selection",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "table_010",
+      "query": "Show classifications of control valves with their typical sizes",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "table_lookup"
+    },
+    {
+      "id": "technical_001",
+      "query": "What are the sizing factors for liquids?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_002",
+      "query": "Tell me about ASME pressure classes for control valves",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_003",
+      "query": "What's the temperature limit for PTFE packing?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_004",
+      "query": "Explain the rangeability concept for control valves",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_005",
+      "query": "What pressure ratings are available for globe valves?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_006",
+      "query": "Describe the flow characteristics - linear vs equal percentage",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_007",
+      "query": "What size range do barstock valves come in?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_008",
+      "query": "Maximum temperature for elastomer materials in valves?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_009",
+      "query": "What's the pressure limit for ENVIRO-SEAL PTFE packing?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_010",
+      "query": "Explain NPT thread connections for control valves",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_011",
+      "query": "What are typical sizes for high performance butterfly valves?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "technical_012",
+      "query": "Quick opening flow characteristic applications",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "technical_spec"
+    },
+    {
+      "id": "figure_001",
+      "query": "Do we have a figure that explains cavitation?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "figure_002",
+      "query": "Show me the modern control valve diagram",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "figure_003",
+      "query": "Where's the illustration of flow characteristic curves?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "figure_004",
+      "query": "I need to see the high-pressure ball valve design",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "figure_005",
+      "query": "Display the eccentric plug valve schematic",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "figure_006",
+      "query": "Can you show the standard globe valve design ET?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "figure_007",
+      "query": "Find the drawing of flanged end connections",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "figure_008",
+      "query": "Locate the ENVIRO-SEAL packing arrangement diagram",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "figure_009",
+      "query": "Where's Figure 1-10 about valve characteristics?",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "figure_010",
+      "query": "Get me the welded end connections illustration",
+      "expected_chunk_ids": [],
+      "should_find": true,
+      "category": "figure_lookup"
+    },
+    {
+      "id": "out_of_scope_001",
+      "query": "Show me information about Mars rovers",
+      "expected_chunk_ids": [],
+      "should_find": false,
+      "category": "out_of_scope"
+    },
+    {
+      "id": "out_of_scope_002",
+      "query": "What's the weather forecast for tomorrow?",
+      "expected_chunk_ids": [],
+      "should_find": false,
+      "category": "out_of_scope"
+    },
+    {
+      "id": "out_of_scope_003",
+      "query": "How do I cook pasta?",
+      "expected_chunk_ids": [],
+      "should_find": false,
+      "category": "out_of_scope"
+    }
+  ]
+}

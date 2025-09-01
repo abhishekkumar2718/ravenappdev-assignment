@@ -36,6 +36,73 @@ Possible solutions:
 A few decisions:
 - To reduce the time/cost, let's work on just the first chapter. I can re-run the scripts to generate index for the whole PDF later on.
 
+## Approach 2: Section + Entity Aware Chunking
+
+I need to fix chunking problem, because without good data - nothing else would work well.
+
+### Indexing 
+
+**Section-based chunking with special entity handling:**
+
+1. **Chunk Types**:
+   - `section`: Complete sections bounded by `\section*` markers
+   - `table`: Full tables including captions, extracted as single units
+   - `image`: Image references with captions (`\includegraphics` blocks)
+
+2. **Chunking Strategy**:
+   - Split document at section boundaries (`\section*` markers)
+   - Extract tables (`\begin{table}` to `\end{table}`) as separate chunks
+   - Extract figures (`\begin{figure}` to `\end{figure}`) as separate chunks
+   - Maintain references between sections and their entities
+
+3. **Metadata Structure**:
+   ```python
+   {
+       "chunk_id": str,
+       "chunk_type": "section|table|image",
+       "section_title": str,
+       "section_path": ["Chapter 1", "Control Valve Selection", "Ball Valves"],
+       "entity_ids": ["table_1-2", "figure_1-6"],  # Entities referenced in this section
+       "page_number": int,
+       "line_numbers": [start, end]
+   }
+   ```
+
+4. **Entity Registry**:
+   - Maintain mapping of entity IDs (e.g., "table_1-2") to their chunks
+   - Store relationships between sections and entities they reference
+
+### Retrieval
+
+**Multi-modal retrieval with special handling for tables and images:**
+
+1. **Query Classification**:
+   - `table_lookup`: Queries containing "table", "comparison", "chart", "specifications"
+   - `image_lookup`: Queries containing "figure", "diagram", "show me", "illustration"
+   - `section_search`: General information queries
+
+2. **Section Retrieval**:
+   - Dense search over section embeddings
+   - For each retrieved section, fetch associated entities (tables/figures)
+   - Return both section content and related entities
+
+3. **Table-Specific Retrieval**:
+   - Direct search within table content and captions
+   - Pattern matching for table numbers (e.g., "Table 1-2")
+   - Retrieve complete table even for partial matches
+   - Include section that introduces/discusses the table
+
+4. **Image-Specific Retrieval**:
+   - Search figure captions and descriptions
+   - Pattern matching for figure numbers (e.g., "Figure 1-6")
+   - Return figure metadata with bounding box coordinates
+
+---
+
+I am not re-ranking right now, because I expect the LLM to filter irrelevant documents.
+
+## Approach 3: Section + Entity + Multi-Hop Answering
+
 ## Future Improvements
 
 Noting down ideas that might be useful:

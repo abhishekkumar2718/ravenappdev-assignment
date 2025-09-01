@@ -70,6 +70,11 @@ async def chat(request: ChatRequest):
     # Create citations from results
     citations = []
     for i, (doc, score) in enumerate(results[:5]):  # Use top 5 results
+        # Extract chunk_id from metadata
+        chunk_index = doc.metadata.get('chunk_index', i)
+        source = doc.metadata.get('source', 'manual')
+        chunk_id = f"{source}_chunk_{chunk_index:03d}"
+        
         citations.append(Citation(
             page_no=1,  # Placeholder
             bbox=BoundingBox(
@@ -78,7 +83,8 @@ async def chat(request: ChatRequest):
                 width=500,
                 height=300
             ),
-            confidence=score
+            confidence=score,
+            chunk_id=chunk_id
         ))
     
     return ChatResponse(

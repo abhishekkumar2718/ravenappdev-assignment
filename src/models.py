@@ -17,6 +17,7 @@ class Citation(BaseModel):
     page_no: int
     bbox: BoundingBox
     confidence: Optional[float] = None
+    chunk_id: Optional[str] = None
 
 
 class ChatResponse(BaseModel):
