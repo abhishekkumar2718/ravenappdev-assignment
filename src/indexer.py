@@ -13,6 +13,8 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 import pickle
 import re
+import shutil
+import tempfile
 
 from dotenv import load_dotenv
 from langchain.text_splitter import MarkdownTextSplitter
@@ -20,6 +22,9 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.schema import Document
 from .models import ChunkType, ChunkMetadata, EntityRegistry
+from whoosh.index import create_in
+from whoosh.fields import Schema, TEXT, ID
+from whoosh.qparser import QueryParser
 
 load_dotenv()
 
@@ -578,12 +583,76 @@ class Indexer:
         vectorstore = FAISS.from_documents(documents, self.embeddings)
         return vectorstore
     
-    def save_index(self, vectorstore: FAISS, output_dir: str = None) -> str:
+    def build_whoosh_index(self, documents: List[Document]) -> Any:
         """
-        Save FAISS index to disk with timestamp.
+        Build Whoosh index from documents for keyword search.
+        
+        Args:
+            documents: List of Document objects to index
+            
+        Returns:
+            Whoosh index object
+        """
+        print(f"Building Whoosh keyword index from {len(documents)} chunks...")
+        
+        # Create schema
+        schema = Schema(
+            chunk_id=ID(stored=True, unique=True),
+            content=TEXT(stored=True)
+        )
+        
+        # Create temporary directory for index
+        import tempfile
+        indexdir = tempfile.mkdtemp()
+        
+        # Create index
+        ix = create_in(indexdir, schema)
+        writer = ix.writer()
+        
+        # Add documents
+        for doc in documents:
+            chunk_id = doc.metadata.get('chunk_id', '')
+            content = doc.page_content
+            
+            writer.add_document(
+                chunk_id=chunk_id,
+                content=content
+            )
+        
+        writer.commit()
+        print("Whoosh index built successfully")
+        return ix
+    
+    def save_whoosh_index(self, whoosh_index: Any, save_path: str) -> None:
+        """
+        Save Whoosh index to disk.
+        
+        Args:
+            whoosh_index: Whoosh index object
+            save_path: Directory path to save the index
+        """
+        whoosh_dir = os.path.join(save_path, "whoosh_index")
+        os.makedirs(whoosh_dir, exist_ok=True)
+        
+        # Copy index files from temp directory to save path
+        import shutil
+        temp_dir = whoosh_index.storage.folder
+        
+        for filename in os.listdir(temp_dir):
+            shutil.copy2(
+                os.path.join(temp_dir, filename),
+                os.path.join(whoosh_dir, filename)
+            )
+        
+        print(f"Whoosh index saved to: {whoosh_dir}")
+    
+    def save_index(self, vectorstore: FAISS, whoosh_index: Any = None, output_dir: str = None) -> str:
+        """
+        Save FAISS and Whoosh indices to disk with timestamp.
         
         Args:
             vectorstore: FAISS vector store to save
+            whoosh_index: Optional Whoosh index to save
             output_dir: Base directory for saving (default: data/)
             
         Returns:
@@ -602,12 +671,17 @@ class Indexer:
         # Save FAISS index
         vectorstore.save_local(save_path)
         
+        # Save Whoosh index if provided
+        if whoosh_index:
+            self.save_whoosh_index(whoosh_index, save_path)
+        
         # Save metadata
         metadata = {
             "created_at": timestamp,
             "source_file": "manual_chapter1.mmd",
             "embedding_model": "models/gemini-embedding-001",
-            "num_documents": len(vectorstore.docstore._dict)
+            "num_documents": len(vectorstore.docstore._dict),
+            "has_whoosh_index": whoosh_index is not None
         }
         
         with open(os.path.join(save_path, "metadata.json"), 'w') as f:
@@ -654,8 +728,11 @@ class Indexer:
         print("Building vector index...")
         vectorstore = self.build_index(documents)
         
-        print("Saving index...")
-        save_path = self.save_index(vectorstore)
+        print("Building keyword index...")
+        whoosh_index = self.build_whoosh_index(documents)
+        
+        print("Saving indices...")
+        save_path = self.save_index(vectorstore, whoosh_index)
         
         return save_path
     

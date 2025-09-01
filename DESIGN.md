@@ -101,7 +101,67 @@ I need to fix chunking problem, because without good data - nothing else would w
 
 I am not re-ranking right now, because I expect the LLM to filter irrelevant documents.
 
-## Approach 3: Section + Entity + Multi-Hop Answering
+Observations:
+- The chunks are okay, with images and tables taken out separately.
+- The retrieval is terrible. I am thinking of switching to keyword search instead.
+
+```
+=== Evaluation Summary ===
+Total queries: 35
+Successful queries: 35
+Average Precision: 0.023
+Average Recall: 0.071
+Average F1 Score: 0.034
+Results saved to results/retrieval_accuracy_20250901_192350.json
+```
+
+Approach 2.1: Use vector search + keyword search:
+
+The confidence is now 50% from vector search confidence, and 50% from keyword matches.
+
+```
+=== Evaluation Summary ===
+Total queries: 35
+Successful queries: 5
+Average Precision: 0.64
+Average Recall: 0.7
+Average F1 Score: 0.657
+Results saved to results/retrieval_accuracy_20250901_193357.json
+```
+
+Wait a second, I don't see any retrieved chunks in the result logs. I also wonder why it says only 5 successful queries.
+
+I see that for most questions, it says no confident matches found. Let's remove the confidence score threshold (> 0.5) and try again.
+
+```
+=== Evaluation Summary ===
+Total queries: 35
+Successful queries: 30
+Average Precision: 0.107
+Average Recall: 0.117
+Average F1 Score: 0.11
+Results saved to results/retrieval_accuracy_20250901_194339.json
+```
+
+The results are somewhat better than vector search but still really, really bad.
+
+I wonder if inverted search (keywords -> sections) would better than sections -> keywords. It's too late to rry new ideas now.
+
+## Approach 3: Section + Entity + Multi-Hop Answering (Did not implement)
+
+Use an LLM to break down the initial query into many smaller questions.
+
+For example:
+
+```
+Compare actutator types?
+-> List actutator types
+-> Describe characteristics of actuator type A
+-> Describe characterristics of actuator type B
+...
+```
+
+This will get closer to implementing deep search: https://github.com/langchain-ai/open_deep_research with alternative rounds of search, and verification.
 
 ## Future Improvements
 
@@ -111,6 +171,7 @@ Noting down ideas that might be useful:
 - Re-ranking results using Cohere or similar.
 - Use semantic chunking instead of markdown text splitter: semantic chunking finds more natural boundaries between the different paragraphs.
 - Add checks to validate that facts in the response is present in the citation and actually supports the response.
+- Use keyword-search only: 
 
 ## Decision Log
 

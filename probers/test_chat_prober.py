@@ -23,7 +23,7 @@ class TestChatEndpointProber:
         """Test that the /chat endpoint is available and responds"""
         response = requests.post(
             f"{api_url}/chat",
-            json={"query": "Eccentric plug valves"},
+            json={"query": "Explain the rangeability concept for control valves"},
             timeout=TIMEOUT
         )
 

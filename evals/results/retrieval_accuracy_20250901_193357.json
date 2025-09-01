@@ -1,0 +1,537 @@
+{
+  "timestamp": "2025-09-01T19:36:33.245218",
+  "total_queries": 35,
+  "successful_queries": 5,
+  "aggregate_metrics": {
+    "avg_precision": 0.64,
+    "avg_recall": 0.7,
+    "avg_f1_score": 0.657
+  },
+  "per_query_results": [
+    {
+      "query_id": "table_001",
+      "error": "Failed to query API",
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      }
+    },
+    {
+      "query_id": "table_002",
+      "query": "Can you pull up the table with valve categories and their characteristics?",
+      "category": "table_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_2"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "table_003",
+      "query": "I need the control valve characteristic recommendations table",
+      "category": "table_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_3"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "table_004",
+      "query": "Where's the shutoff leakage standards comparison?",
+      "category": "table_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_4"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "table_005",
+      "query": "Display the packing selection guidelines table for sliding-stem valves",
+      "category": "table_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_5"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "table_006",
+      "query": "What's in Table 1-4 about valve leakage?",
+      "category": "table_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_4"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "table_007",
+      "query": "Give me the flow control process characteristics table",
+      "category": "table_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_3"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "table_008",
+      "query": "Present the pressure control systems recommendations",
+      "category": "table_lookup",
+      "retrieved_chunks": [
+        "figure_37_3",
+        "section_23",
+        "section_32",
+        "section_6",
+        "table_1_5"
+      ],
+      "expected_chunks": [
+        "table_1_3"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "success"
+    },
+    {
+      "query_id": "table_009",
+      "query": "Fetch the criteria checklist for valve selection",
+      "category": "table_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_1"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "table_010",
+      "query": "Show classifications of control valves with their typical sizes",
+      "category": "table_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_2"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_001",
+      "query": "What are the sizing factors for liquids?",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_002",
+      "query": "Tell me about ASME pressure classes for control valves",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_2"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_003",
+      "query": "What's the temperature limit for PTFE packing?",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "section_18",
+        "table_1_5"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_004",
+      "query": "Explain the rangeability concept for control valves",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "section_13"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_005",
+      "query": "What pressure ratings are available for globe valves?",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_4",
+        "table_1_2"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_006",
+      "query": "Describe the flow characteristics - linear vs equal percentage",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "section_12",
+        "table_1_3"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_007",
+      "query": "What size range do barstock valves come in?",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_2"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_008",
+      "query": "Maximum temperature for elastomer materials in valves?",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "table_1_5"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_009",
+      "query": "What's the pressure limit for ENVIRO-SEAL PTFE packing?",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "section_18",
+        "table_1_5"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_010",
+      "query": "Explain NPT thread connections for control valves",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "section_15"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_011",
+      "query": "What are typical sizes for high performance butterfly valves?",
+      "category": "technical_spec",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_9",
+        "table_1_2"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "technical_012",
+      "query": "Quick opening flow characteristic applications",
+      "category": "technical_spec",
+      "retrieved_chunks": [
+        "figure_1_10",
+        "section_12",
+        "section_29",
+        "section_32",
+        "section_36"
+      ],
+      "expected_chunks": [
+        "section_12",
+        "table_1_3"
+      ],
+      "metrics": {
+        "precision": 0.2,
+        "recall": 0.5,
+        "f1_score": 0.286
+      },
+      "status": "success"
+    },
+    {
+      "query_id": "figure_001",
+      "query": "Do we have a figure that explains cavitation?",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "figure_002",
+      "query": "Show me the modern control valve diagram",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_1"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "figure_003",
+      "query": "Where's the illustration of flow characteristic curves?",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_10"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "figure_004",
+      "query": "I need to see the high-pressure ball valve design",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_6"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "figure_005",
+      "query": "Display the eccentric plug valve schematic",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_8"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "figure_006",
+      "query": "Can you show the standard globe valve design ET?",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_2"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "figure_007",
+      "query": "Find the drawing of flanged end connections",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "figure_008",
+      "query": "Locate the ENVIRO-SEAL packing arrangement diagram",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_17"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "figure_009",
+      "query": "Where's Figure 1-10 about valve characteristics?",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_10"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "figure_010",
+      "query": "Get me the welded end connections illustration",
+      "category": "figure_lookup",
+      "retrieved_chunks": [],
+      "expected_chunks": [
+        "figure_1_12"
+      ],
+      "metrics": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "out_of_scope_001",
+      "query": "Show me information about Mars rovers",
+      "category": "out_of_scope",
+      "retrieved_chunks": [],
+      "expected_chunks": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "out_of_scope_002",
+      "query": "What's the weather forecast for tomorrow?",
+      "category": "out_of_scope",
+      "retrieved_chunks": [],
+      "expected_chunks": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      "status": "insufficient_info"
+    },
+    {
+      "query_id": "out_of_scope_003",
+      "query": "How do I cook pasta?",
+      "category": "out_of_scope",
+      "retrieved_chunks": [],
+      "expected_chunks": [],
+      "metrics": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0
+      },
+      "status": "insufficient_info"
+    }
+  ]
+}

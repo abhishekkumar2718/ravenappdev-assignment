@@ -112,7 +112,8 @@ class RetrievalAccuracyEvaluator:
                 "retrieved_chunks": sorted(list(retrieved)),
                 "expected_chunks": sorted(list(expected)),
                 "metrics": metrics,
-                "status": response.get('status', 'unknown')
+                "status": response.get('status', 'unknown'),
+                'content': response.get('content', '')
             }
             results.append(result)
             

@@ -54,16 +54,6 @@ async def chat(request: ChatRequest):
             content="No relevant information found for your query."
         )
     
-    # Check confidence threshold (using the best score)
-    best_score = results[0][1] if results else 0
-    
-    if best_score < 0.5:
-        return ChatResponse(
-            status="insufficient_info",
-            citations=[],
-            content="No confident matches found for your query."
-        )
-    
     # Generate response using presenter
     content = presenter.present(request.query, results)
     
